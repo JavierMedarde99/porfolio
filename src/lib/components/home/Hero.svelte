@@ -16,16 +16,16 @@
 		Construyo aplicaciones robustas con Java, Spring Boot y tecnologías modernas. Más de 3 años de
 		experiencia en producción.
 	</p>
-	<div class="mt-6 flex flex-wrap justify-center gap-3">
+	<div class="mt-6 flex flex-col justify-center gap-3 sm:flex-row sm:flex-wrap">
 		<a
 			href="/projects"
-			class="rounded-md bg-zinc-900 px-5 py-2.5 font-medium text-white transition-opacity hover:opacity-90 dark:bg-white dark:text-zinc-900"
+			class="min-h-11 rounded-md bg-zinc-900 px-5 py-2.5 text-center font-medium text-white transition-opacity hover:opacity-90 dark:bg-white dark:text-zinc-900"
 		>
 			Ver proyectos
 		</a>
 		<a
 			href="/contact"
-			class="rounded-md border border-zinc-300 px-5 py-2.5 font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
+			class="min-h-11 rounded-md border border-zinc-300 px-5 py-2.5 text-center font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
 		>
 			Contactar
 		</a>

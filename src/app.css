@@ -17,6 +17,11 @@ body {
 		color 200ms ease;
 }
 
+img {
+	max-width: 100%;
+	height: auto;
+}
+
 /* Scroll reveal: fade + slide-up sutil (200-400ms) */
 .reveal {
 	opacity: 0;
