@@ -5,7 +5,15 @@ import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
 	{
-		ignores: ['.svelte-kit/', 'build/', 'dist/', 'node_modules/', 'static/'],
+		ignores: [
+			'.svelte-kit/',
+			'build/',
+			'dist/',
+			'node_modules/',
+			'static/',
+			'test-results/',
+			'playwright-report/',
+		],
 	},
 	{
 		languageOptions: {
