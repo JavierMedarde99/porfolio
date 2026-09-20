@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { pageTitle } from '$lib/utils/seo';
 	import TechBadge from '$lib/components/projects/TechBadge.svelte';
 	import type { PageData } from './$types';
 
@@ -11,7 +12,7 @@
 </script>
 
 <svelte:head>
-	<title>{project.title} | Javi Med</title>
+	<title>{pageTitle(project.title)}</title>
 	<meta name="description" content={project.description} />
 	<meta property="og:title" content={`${project.title} | Javi Med`} />
 	<meta property="og:description" content={project.description} />
