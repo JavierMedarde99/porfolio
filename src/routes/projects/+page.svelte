@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { SITE } from '$lib/utils/seo';
 	import ProjectCard from '$lib/components/projects/ProjectCard.svelte';
 	import ProjectFilter from '$lib/components/projects/ProjectFilter.svelte';
 	import type { CategoryFilter } from '$lib/components/projects/ProjectFilter.svelte';
@@ -29,6 +30,7 @@
 		name="description"
 		content="Proyectos de Javi Med: backend con Spring Boot, apps móviles con Flutter y frontend con SvelteKit."
 	/>
+	<link rel="canonical" href={SITE.url + '/projects'} />
 </svelte:head>
 
 <main class="mx-auto max-w-5xl px-4 py-12">

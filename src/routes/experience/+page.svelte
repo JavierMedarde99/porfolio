@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { SITE } from '$lib/utils/seo';
 	import ExperienceCard from '$lib/components/experience/ExperienceCard.svelte';
 	import { EDUCATION, EXPERIENCES } from '$lib/data/experience';
 </script>
@@ -9,6 +10,7 @@
 		name="description"
 		content="Trayectoria profesional de Javi Med: más de 3 años como Java Developer con Spring Boot, microservicios y cloud."
 	/>
+	<link rel="canonical" href={SITE.url + '/experience'} />
 </svelte:head>
 
 <main class="mx-auto max-w-4xl px-4 py-12">

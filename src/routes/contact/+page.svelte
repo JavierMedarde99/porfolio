@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { SITE } from '$lib/utils/seo';
 	import ContactForm from '$lib/components/contact/ContactForm.svelte';
 	import type { ActionData } from './$types';
 
@@ -15,6 +16,7 @@
 		name="description"
 		content="Contacta con Javi Med: formulario, email, GitHub y LinkedIn. Respuesta en 24-48h."
 	/>
+	<link rel="canonical" href={SITE.url + '/contact'} />
 </svelte:head>
 
 <main class="mx-auto max-w-4xl px-4 py-12">
