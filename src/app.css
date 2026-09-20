@@ -17,6 +17,13 @@ body {
 		color 200ms ease;
 }
 
+/* Foco visible solo con teclado: outline consistente y con contraste */
+:focus-visible {
+	outline: 2px solid currentColor;
+	outline-offset: 3px;
+	border-radius: 2px;
+}
+
 img {
 	max-width: 100%;
 	height: auto;

@@ -83,7 +83,7 @@
 		<ol class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
 			{#each WORK_METHOD as item (item.step)}
 				<li class="rounded-xl border border-zinc-200 p-4 dark:border-zinc-800">
-					<p class="text-sm font-bold opacity-50">{item.step}</p>
+					<p class="text-sm font-bold opacity-70">{item.step}</p>
 					<h3 class="mt-1 font-semibold">{item.title}</h3>
 					<p class="mt-1 text-sm opacity-80">{item.text}</p>
 				</li>
