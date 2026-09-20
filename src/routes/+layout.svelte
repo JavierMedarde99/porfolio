@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onNavigate } from '$app/navigation';
 	import '../app.css';
 	import Footer from '$lib/components/layout/Footer.svelte';
 	import Navbar from '$lib/components/layout/Navbar.svelte';
@@ -8,6 +9,18 @@
 	}
 
 	let { children }: Props = $props();
+
+	onNavigate((navigation) => {
+		if (!document.startViewTransition) return;
+		if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+		return new Promise<void>((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
+			});
+		});
+	});
 </script>
 
 <div
