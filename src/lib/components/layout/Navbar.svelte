@@ -21,7 +21,10 @@
 <header
 	class="sticky top-0 z-40 border-b border-zinc-200 bg-white/80 backdrop-blur transition-colors dark:border-zinc-800 dark:bg-zinc-950/80"
 >
-	<nav aria-label="Navegación principal" class="mx-auto flex h-16 max-w-5xl items-center justify-between px-4">
+	<nav
+		aria-label="Navegación principal"
+		class="mx-auto flex h-16 max-w-5xl items-center justify-between px-4"
+	>
 		<a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight">
 			<span
 				aria-hidden="true"
@@ -33,13 +36,13 @@
 		</a>
 
 		<ul class="hidden items-center gap-6 md:flex">
-			{#each NAV_LINKS as link}
+			{#each NAV_LINKS as link (link.href)}
 				<li>
 					<a
 						href={link.href}
 						aria-current={$page.url.pathname === link.href ? 'page' : undefined}
-						class="text-sm transition-colors hover:text-zinc-500 dark:hover:text-zinc-400 {$page.url.pathname ===
-						link.href
+						class="text-sm transition-colors hover:text-zinc-500 dark:hover:text-zinc-400 {$page.url
+							.pathname === link.href
 							? 'font-semibold'
 							: ''}"
 					>
