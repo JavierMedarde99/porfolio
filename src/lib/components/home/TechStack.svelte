@@ -1,9 +1,10 @@
 <script lang="ts">
+	import { reveal } from '$lib/actions/reveal';
 	import TechBadge from '$lib/components/projects/TechBadge.svelte';
 	import { SKILL_GROUPS } from '$lib/data/skills';
 </script>
 
-<section aria-label="Stack tecnológico" class="mx-auto max-w-4xl px-4 py-12">
+<section use:reveal aria-label="Stack tecnológico" class="mx-auto max-w-4xl px-4 py-12">
 	<h2 class="text-2xl font-bold tracking-tight">Tech Stack</h2>
 	<div class="mt-6 grid gap-6 sm:grid-cols-2">
 		{#each SKILL_GROUPS as group (group.title)}

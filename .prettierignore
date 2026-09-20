@@ -4,6 +4,8 @@ dist/
 node_modules/
 package/
 package-lock.json
+test-results/
+playwright-report/
 *.png
 *.jpg
 *.jpeg

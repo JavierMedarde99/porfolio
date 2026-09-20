@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { fade, fly } from 'svelte/transition';
 	import { NAV_LINKS } from '$lib/data/navigation';
 
 	interface Props {
@@ -9,6 +11,11 @@
 	}
 
 	let { open, onClose, isDark, onToggleTheme }: Props = $props();
+	let reducedMotion = $state(false);
+
+	onMount(() => {
+		reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	});
 
 	function handleKeydown(event: KeyboardEvent): void {
 		if (event.key === 'Escape') onClose();
@@ -30,12 +37,14 @@
 			aria-label="Cerrar menú"
 			onclick={onClose}
 			tabindex="-1"
+			transition:fade={{ duration: reducedMotion ? 0 : 200 }}
 		></button>
 		<div
 			role="dialog"
 			aria-modal="true"
 			aria-label="Menú de navegación"
 			class="absolute top-0 right-0 flex h-full w-64 flex-col gap-2 bg-white p-6 shadow-xl transition-colors dark:bg-zinc-950"
+			transition:fly={{ x: reducedMotion ? 0 : 80, duration: reducedMotion ? 0 : 250 }}
 		>
 			<div class="flex items-center justify-between">
 				<span class="text-lg font-bold">Menú</span>

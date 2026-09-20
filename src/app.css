@@ -21,3 +21,31 @@ img {
 	max-width: 100%;
 	height: auto;
 }
+
+/* Scroll reveal: fade + slide-up sutil (200-400ms) */
+.reveal {
+	opacity: 0;
+	translate: 0 12px;
+	transition:
+		opacity 300ms ease,
+		translate 300ms ease;
+}
+
+.reveal.is-visible {
+	opacity: 1;
+	translate: 0 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	::before,
+	::after {
+		animation-duration: 0.01ms !important;
+		transition-duration: 0.01ms !important;
+	}
+
+	.reveal {
+		opacity: 1;
+		translate: none;
+	}
+}

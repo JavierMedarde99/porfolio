@@ -1,9 +1,14 @@
 <script lang="ts">
+	import { reveal } from '$lib/actions/reveal';
 	import TechBadge from '$lib/components/projects/TechBadge.svelte';
 	import { HERO_TECHS } from '$lib/data/skills';
 </script>
 
-<section aria-label="Presentación" class="mx-auto max-w-4xl px-4 pt-16 pb-12 text-center md:pt-24">
+<section
+	use:reveal
+	aria-label="Presentación"
+	class="mx-auto max-w-4xl px-4 pt-16 pb-12 text-center md:pt-24"
+>
 	<p class="text-sm font-medium tracking-widest uppercase opacity-60">Hola, soy</p>
 	<h1 class="mt-2 text-5xl font-bold tracking-tight md:text-6xl">Javi Med</h1>
 	<p class="mt-3 text-xl opacity-80 md:text-2xl">Backend / Full Stack Developer</p>
