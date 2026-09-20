@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { pageTitle } from '$lib/utils/seo';
 	import TechBadge from '$lib/components/projects/TechBadge.svelte';
 	import { SKILL_GROUPS } from '$lib/data/skills';
 
@@ -23,7 +24,7 @@
 </script>
 
 <svelte:head>
-	<title>Sobre mí | Javi Med</title>
+	<title>{pageTitle('Sobre mí')}</title>
 	<meta
 		name="description"
 		content="Javi Med: Java Backend Developer con más de 3 años de experiencia en Spring Boot, microservicios y cloud."

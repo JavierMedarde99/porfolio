@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { pageTitle } from '$lib/utils/seo';
 	import ExperienceCard from '$lib/components/experience/ExperienceCard.svelte';
 	import { EDUCATION, EXPERIENCES } from '$lib/data/experience';
 </script>
 
 <svelte:head>
-	<title>Experiencia | Javi Med</title>
+	<title>{pageTitle('Experiencia')}</title>
 	<meta
 		name="description"
 		content="Trayectoria profesional de Javi Med: más de 3 años como Java Developer con Spring Boot, microservicios y cloud."

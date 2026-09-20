@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { pageTitle } from '$lib/utils/seo';
 	import ProjectCard from '$lib/components/projects/ProjectCard.svelte';
 	import ProjectFilter from '$lib/components/projects/ProjectFilter.svelte';
 	import type { CategoryFilter } from '$lib/components/projects/ProjectFilter.svelte';
@@ -24,7 +25,7 @@
 </script>
 
 <svelte:head>
-	<title>Proyectos | Javi Med</title>
+	<title>{pageTitle('Proyectos')}</title>
 	<meta
 		name="description"
 		content="Proyectos de Javi Med: backend con Spring Boot, apps móviles con Flutter y frontend con SvelteKit."

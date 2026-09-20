@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { pageTitle } from '$lib/utils/seo';
 	import ContactForm from '$lib/components/contact/ContactForm.svelte';
 	import type { ActionData } from './$types';
 
@@ -10,7 +11,7 @@
 </script>
 
 <svelte:head>
-	<title>Contacto | Javi Med</title>
+	<title>{pageTitle('Contacto')}</title>
 	<meta
 		name="description"
 		content="Contacta con Javi Med: formulario, email, GitHub y LinkedIn. Respuesta en 24-48h."
