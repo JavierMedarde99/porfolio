@@ -122,7 +122,7 @@
 		<button
 			type="submit"
 			disabled={pending}
-			class="rounded-md bg-zinc-900 px-4 py-2 font-medium text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white dark:text-zinc-900"
+			class="min-h-11 w-full rounded-md bg-zinc-900 px-4 py-2 font-medium sm:w-auto text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60 dark:bg-white dark:text-zinc-900"
 		>
 			{pending ? 'Enviando…' : 'Enviar mensaje'}
 		</button>
