@@ -20,12 +20,12 @@
 			<p class="opacity-80">{experience.company}</p>
 		</div>
 		<ul class="flex list-disc flex-col gap-1 pl-5 opacity-90">
-			{#each experience.description as item}
+			{#each experience.description as item (item)}
 				<li>{item}</li>
 			{/each}
 		</ul>
 		<ul aria-label="Tecnologías utilizadas" class="flex flex-wrap gap-2">
-			{#each experience.technologies as tech}
+			{#each experience.technologies as tech (tech)}
 				<li
 					class="rounded-full border border-zinc-300 px-3 py-1 text-xs font-medium transition-colors dark:border-zinc-700"
 				>

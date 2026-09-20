@@ -54,7 +54,9 @@
 						stroke-linejoin="round"
 						aria-hidden="true"
 					>
-						<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+						<path
+							d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+						/>
 						<rect width="4" height="12" x="2" y="9" />
 						<circle cx="4" cy="4" r="2" />
 					</svg>
@@ -63,11 +65,16 @@
 		</div>
 
 		<nav aria-label="Enlaces rápidos">
-			<span class="mb-3 block text-sm font-semibold tracking-wide uppercase opacity-70">Secciones</span>
+			<span class="mb-3 block text-sm font-semibold tracking-wide uppercase opacity-70"
+				>Secciones</span
+			>
 			<ul class="flex flex-col gap-2 text-sm">
-				{#each NAV_LINKS as link}
+				{#each NAV_LINKS as link (link.href)}
 					<li>
-						<a href={link.href} class="transition-colors hover:text-zinc-500 dark:hover:text-zinc-400">
+						<a
+							href={link.href}
+							class="transition-colors hover:text-zinc-500 dark:hover:text-zinc-400"
+						>
 							{link.label}
 						</a>
 					</li>
@@ -76,14 +83,21 @@
 		</nav>
 
 		<div>
-			<span class="mb-3 block text-sm font-semibold tracking-wide uppercase opacity-70">Contacto</span>
-			<a href="/contact" class="text-sm transition-colors hover:text-zinc-500 dark:hover:text-zinc-400">
+			<span class="mb-3 block text-sm font-semibold tracking-wide uppercase opacity-70"
+				>Contacto</span
+			>
+			<a
+				href="/contact"
+				class="text-sm transition-colors hover:text-zinc-500 dark:hover:text-zinc-400"
+			>
 				Escríbeme desde la página de contacto
 			</a>
 		</div>
 	</div>
 
 	<div class="border-t border-zinc-200 dark:border-zinc-800">
-		<p class="mx-auto max-w-5xl px-4 py-4 text-sm opacity-70">© {year} Javi Med. Todos los derechos reservados.</p>
+		<p class="mx-auto max-w-5xl px-4 py-4 text-sm opacity-70">
+			© {year} Javi Med. Todos los derechos reservados.
+		</p>
 	</div>
 </footer>

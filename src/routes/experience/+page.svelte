@@ -20,7 +20,7 @@
 
 	<section aria-label="Experiencia profesional" class="mt-10">
 		<ol class="flex flex-col gap-10 border-l border-zinc-200 pl-0 dark:border-zinc-800">
-			{#each EXPERIENCES as experience}
+			{#each EXPERIENCES as experience (experience.role)}
 				<ExperienceCard {experience} />
 			{/each}
 		</ol>
@@ -29,7 +29,7 @@
 	<section aria-label="Formación" class="mt-14">
 		<h2 class="text-2xl font-bold tracking-tight">Formación</h2>
 		<ul class="mt-6 flex flex-col gap-6">
-			{#each EDUCATION as item}
+			{#each EDUCATION as item (item.title)}
 				<li class="flex flex-col gap-1">
 					<p class="text-sm font-medium tracking-wide uppercase opacity-60">{item.period}</p>
 					<h3 class="text-lg font-semibold">{item.title}</h3>

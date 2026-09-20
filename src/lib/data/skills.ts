@@ -6,20 +6,30 @@ export interface SkillGroup {
 export const SKILL_GROUPS: SkillGroup[] = [
 	{
 		title: 'Backend',
-		items: ['Java', 'Spring Boot', 'Kotlin', 'REST APIs', 'JWT', 'PostgreSQL', 'MySQL', 'RabbitMQ', 'Kafka']
+		items: [
+			'Java',
+			'Spring Boot',
+			'Kotlin',
+			'REST APIs',
+			'JWT',
+			'PostgreSQL',
+			'MySQL',
+			'RabbitMQ',
+			'Kafka',
+		],
 	},
 	{
 		title: 'Frontend',
-		items: ['TypeScript', 'Svelte', 'React', 'HTML/CSS']
+		items: ['TypeScript', 'Svelte', 'React', 'HTML/CSS'],
 	},
 	{
 		title: 'Mobile',
-		items: ['Flutter', 'Dart', 'Supabase']
+		items: ['Flutter', 'Dart', 'Supabase'],
 	},
 	{
 		title: 'DevOps',
-		items: ['Docker', 'Kubernetes', 'Git', 'GitHub', 'AWS', 'CI/CD']
-	}
+		items: ['Docker', 'Kubernetes', 'Git', 'GitHub', 'AWS', 'CI/CD'],
+	},
 ];
 
 export const HERO_TECHS = ['Java', 'Spring Boot', 'TypeScript', 'Svelte', 'Flutter', 'Docker'];

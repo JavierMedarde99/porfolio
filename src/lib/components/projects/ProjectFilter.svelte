@@ -13,7 +13,7 @@
 	let {
 		category = $bindable<CategoryFilter>('Todos'),
 		technologies = $bindable<string[]>([]),
-		availableTechnologies = []
+		availableTechnologies = [],
 	}: Props = $props();
 
 	function toggleTechnology(tech: string): void {
@@ -32,7 +32,7 @@
 	<fieldset>
 		<legend class="mb-2 text-sm font-semibold tracking-wide uppercase opacity-70">Categoría</legend>
 		<div class="flex flex-wrap gap-2" role="group" aria-label="Filtrar por categoría">
-			{#each CATEGORIES as item}
+			{#each CATEGORIES as item (item)}
 				<button
 					type="button"
 					onclick={() => (category = item)}
@@ -48,9 +48,11 @@
 	</fieldset>
 
 	<fieldset>
-		<legend class="mb-2 text-sm font-semibold tracking-wide uppercase opacity-70">Tecnologías</legend>
+		<legend class="mb-2 text-sm font-semibold tracking-wide uppercase opacity-70"
+			>Tecnologías</legend
+		>
 		<div class="flex flex-wrap gap-2">
-			{#each availableTechnologies as tech}
+			{#each availableTechnologies as tech (tech)}
 				<label
 					class="flex cursor-pointer items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors has-checked:bg-zinc-900 has-checked:text-white has-checked:dark:bg-white has-checked:dark:text-zinc-900 border-zinc-300 dark:border-zinc-700"
 				>

@@ -63,7 +63,7 @@
 			</div>
 			<nav>
 				<ul class="flex flex-col gap-1">
-					{#each NAV_LINKS as link}
+					{#each NAV_LINKS as link (link.href)}
 						<li>
 							<a
 								href={link.href}

@@ -20,7 +20,7 @@ export const EXPERIENCES: Experience[] = [
 		period: 'ago 2026 — actualidad',
 		description: [
 			'Desarrollo de APIs BFF para la conexión de datos con el frontend.',
-			'Desarrollo con agentes e IA para aumentar la productividad del equipo.'
+			'Desarrollo con agentes e IA para aumentar la productividad del equipo.',
 		],
 		technologies: [
 			'Java',
@@ -29,8 +29,8 @@ export const EXPERIENCES: Experience[] = [
 			'RabbitMQ',
 			'Apache Kafka',
 			'Docker',
-			'PostgreSQL'
-		]
+			'PostgreSQL',
+		],
 	},
 	{
 		role: 'Java Developer Junior/Mid',
@@ -40,7 +40,7 @@ export const EXPERIENCES: Experience[] = [
 			'Desarrollo y mantenimiento de un sistema de pago móvil con pasarelas de pago, integrando microservicios con comunicación asíncrona (RabbitMQ, Apache Kafka).',
 			'Arquitectura MVC con Spring Boot y Thymeleaf, gestionando el ciclo completo de petición en el backend.',
 			'Despliegue de servicios con Docker y Kubernetes, con pipelines automatizados.',
-			'Integración con AWS y AWS Lambda, APIs REST/SOAP e informes con JasperReports.'
+			'Integración con AWS y AWS Lambda, APIs REST/SOAP e informes con JasperReports.',
 		],
 		technologies: [
 			'Java',
@@ -53,20 +53,20 @@ export const EXPERIENCES: Experience[] = [
 			'Docker',
 			'Kubernetes',
 			'AWS',
-			'MySQL'
-		]
-	}
+			'MySQL',
+		],
+	},
 ];
 
 export const EDUCATION: Education[] = [
 	{
 		title: 'CFGS Desarrollo de Aplicaciones Web (DAW)',
 		period: '2020 — 2022',
-		school: 'I.E.S. Mar de Alborán · Estepona'
+		school: 'I.E.S. Mar de Alborán · Estepona',
 	},
 	{
 		title: 'Bachillerato de Ciencias Sociales',
 		period: '2018 — 2020',
-		school: 'I.E.S. Río Verde · Marbella'
-	}
+		school: 'I.E.S. Río Verde · Marbella',
+	},
 ];
