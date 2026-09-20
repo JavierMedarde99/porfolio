@@ -1,9 +1,19 @@
+<script lang="ts">
+	import AboutPreview from '$lib/components/home/AboutPreview.svelte';
+	import FeaturedProjects from '$lib/components/home/FeaturedProjects.svelte';
+	import Hero from '$lib/components/home/Hero.svelte';
+	import TechStack from '$lib/components/home/TechStack.svelte';
+</script>
+
 <svelte:head>
-	<title>Javi Med | Developer</title>
-	<meta name="description" content="Portfolio de Javi Med — proyectos y experiencia." />
+	<title>Javi Med | Backend & Full Stack Developer</title>
+	<meta
+		name="description"
+		content="Portfolio de Javi Med: Java, Spring Boot, microservicios y proyectos full stack."
+	/>
 </svelte:head>
 
-<main class="mx-auto flex max-w-4xl flex-col items-center justify-center gap-4 p-8 py-24 text-center">
-	<h1 class="text-4xl font-bold tracking-tight">Javi Med</h1>
-	<p class="text-lg opacity-80">Base SvelteKit + TypeScript + Tailwind operativa.</p>
-</main>
+<Hero />
+<FeaturedProjects />
+<TechStack />
+<AboutPreview />
