@@ -21,3 +21,7 @@ package/
 # Logs
 *.log
 npm-debug.log*
+
+# Tests
+test-results/
+playwright-report/

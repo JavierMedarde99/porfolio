@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { reveal } from '$lib/actions/reveal';
 	import TechBadge from '$lib/components/projects/TechBadge.svelte';
 	import { SKILL_GROUPS } from '$lib/data/skills';
 
@@ -34,7 +35,7 @@
 	<h1 class="text-3xl font-bold tracking-tight">Sobre mí</h1>
 	<p class="mt-2 text-lg opacity-80">Java Backend Developer · Full Stack</p>
 
-	<section aria-label="Perfil" class="mt-6 flex flex-col gap-4 opacity-90">
+	<section use:reveal aria-label="Perfil" class="mt-6 flex flex-col gap-4 opacity-90">
 		<p>
 			Soy desarrollador backend con más de 3 años de experiencia profesional, especializado en Java
 			y Spring Boot. Trabajo con arquitecturas de microservicios, mensajería asíncrona y despliegues
@@ -53,7 +54,7 @@
 		</p>
 	</section>
 
-	<section aria-label="Habilidades por área" class="mt-12">
+	<section use:reveal aria-label="Habilidades por área" class="mt-12">
 		<h2 class="text-2xl font-bold tracking-tight">Skills</h2>
 		<div class="mt-6 grid gap-6 sm:grid-cols-2">
 			{#each SKILL_GROUPS as group (group.title)}
@@ -77,7 +78,7 @@
 		</div>
 	</section>
 
-	<section aria-label="Forma de trabajar" class="mt-12">
+	<section use:reveal aria-label="Forma de trabajar" class="mt-12">
 		<h2 class="text-2xl font-bold tracking-tight">Cómo trabajo</h2>
 		<ol class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
 			{#each WORK_METHOD as item (item.step)}
