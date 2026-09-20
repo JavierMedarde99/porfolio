@@ -35,9 +35,8 @@
 						<path d="M9 18c-4.51 2-5-2-7-2" />
 					</svg>
 				</a>
-				<!-- TODO: actualizar con la URL real de LinkedIn -->
 				<a
-					href="https://www.linkedin.com/"
+					href="https://www.linkedin.com/in/javier-medarde-mata-991689181"
 					target="_blank"
 					rel="noreferrer"
 					aria-label="LinkedIn de Javi Med"
