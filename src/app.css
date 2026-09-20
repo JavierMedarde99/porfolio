@@ -16,3 +16,8 @@ body {
 		background-color 200ms ease,
 		color 200ms ease;
 }
+
+img {
+	max-width: 100%;
+	height: auto;
+}
