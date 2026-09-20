@@ -9,9 +9,27 @@
 	}
 
 	let { open, onClose, isDark, onToggleTheme }: Props = $props();
+	let dialog: HTMLDivElement | undefined = $state();
+
+	const FOCUSABLE = 'a[href], button:not([disabled])';
 
 	function handleKeydown(event: KeyboardEvent): void {
-		if (event.key === 'Escape') onClose();
+		if (event.key === 'Escape') {
+			onClose();
+			return;
+		}
+		if (event.key !== 'Tab' || !dialog) return;
+		const items = [...dialog.querySelectorAll<HTMLElement>(FOCUSABLE)];
+		if (items.length === 0) return;
+		const first = items[0];
+		const last = items[items.length - 1];
+		if (event.shiftKey && document.activeElement === first) {
+			event.preventDefault();
+			last.focus();
+		} else if (!event.shiftKey && document.activeElement === last) {
+			event.preventDefault();
+			first.focus();
+		}
 	}
 
 	$effect(() => {
@@ -32,6 +50,7 @@
 			tabindex="-1"
 		></button>
 		<div
+			bind:this={dialog}
 			role="dialog"
 			aria-modal="true"
 			aria-label="Menú de navegación"
