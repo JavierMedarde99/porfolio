@@ -14,7 +14,9 @@
 	/>
 </svelte:head>
 
-<Hero />
-<FeaturedProjects />
-<TechStack />
-<AboutPreview />
+<main>
+	<Hero />
+	<FeaturedProjects />
+	<TechStack />
+	<AboutPreview />
+</main>

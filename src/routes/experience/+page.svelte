@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { reveal } from '$lib/actions/reveal';
 	import { pageTitle } from '$lib/utils/seo';
 	import ExperienceCard from '$lib/components/experience/ExperienceCard.svelte';
 	import { EDUCATION, EXPERIENCES } from '$lib/data/experience';
@@ -19,7 +20,7 @@
 		microservicios y despliegues cloud.
 	</p>
 
-	<section aria-label="Experiencia profesional" class="mt-10">
+	<section use:reveal aria-label="Experiencia profesional" class="mt-10">
 		<ol class="flex flex-col gap-10 border-l border-zinc-200 pl-0 dark:border-zinc-800">
 			{#each EXPERIENCES as experience (experience.role)}
 				<ExperienceCard {experience} />
@@ -27,7 +28,7 @@
 		</ol>
 	</section>
 
-	<section aria-label="Formación" class="mt-14">
+	<section use:reveal aria-label="Formación" class="mt-14">
 		<h2 class="text-2xl font-bold tracking-tight">Formación</h2>
 		<ul class="mt-6 flex flex-col gap-6">
 			{#each EDUCATION as item (item.title)}
