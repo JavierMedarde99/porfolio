@@ -12,7 +12,7 @@ const STATIC_PAGES: Entry[] = [
 	{ path: '/about', changefreq: 'monthly', priority: '0.8' },
 	{ path: '/projects', changefreq: 'weekly', priority: '0.9' },
 	{ path: '/experience', changefreq: 'monthly', priority: '0.8' },
-	{ path: '/contact', changefreq: 'monthly', priority: '0.7' }
+	{ path: '/contact', changefreq: 'monthly', priority: '0.7' },
 ];
 
 export async function GET(): Promise<Response> {
@@ -22,8 +22,8 @@ export async function GET(): Promise<Response> {
 		...projects.map((project) => ({
 			path: `/projects/${project.slug}`,
 			changefreq: 'monthly' as const,
-			priority: '0.6'
-		}))
+			priority: '0.6',
+		})),
 	];
 
 	const urls = entries
@@ -42,7 +42,7 @@ export async function GET(): Promise<Response> {
 	return new Response(body, {
 		headers: {
 			'Content-Type': 'application/xml',
-			'Cache-Control': 'max-age=0, s-maxage=3600'
-		}
+			'Cache-Control': 'max-age=0, s-maxage=3600',
+		},
 	});
 }
