@@ -15,7 +15,7 @@
 					target="_blank"
 					rel="noreferrer"
 					aria-label="GitHub de Javi Med"
-					class="rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800"
+					class="flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -40,7 +40,7 @@
 					target="_blank"
 					rel="noreferrer"
 					aria-label="LinkedIn de Javi Med"
-					class="rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800"
+					class="flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

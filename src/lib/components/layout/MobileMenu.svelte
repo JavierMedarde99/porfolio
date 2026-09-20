@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
+	import { fade, fly } from 'svelte/transition';
 	import { NAV_LINKS } from '$lib/data/navigation';
 
 	interface Props {
@@ -10,8 +12,13 @@
 
 	let { open, onClose, isDark, onToggleTheme }: Props = $props();
 	let dialog: HTMLDivElement | undefined = $state();
+	let reducedMotion = $state(false);
 
 	const FOCUSABLE = 'a[href], button:not([disabled])';
+
+	onMount(() => {
+		reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+	});
 
 	function handleKeydown(event: KeyboardEvent): void {
 		if (event.key === 'Escape') {
@@ -48,6 +55,7 @@
 			aria-label="Cerrar menú"
 			onclick={onClose}
 			tabindex="-1"
+			transition:fade={{ duration: reducedMotion ? 0 : 200 }}
 		></button>
 		<div
 			bind:this={dialog}
@@ -55,13 +63,14 @@
 			aria-modal="true"
 			aria-label="Menú de navegación"
 			class="absolute top-0 right-0 flex h-full w-64 flex-col gap-2 bg-white p-6 shadow-xl transition-colors dark:bg-zinc-950"
+			transition:fly={{ x: reducedMotion ? 0 : 80, duration: reducedMotion ? 0 : 250 }}
 		>
 			<div class="flex items-center justify-between">
 				<span class="text-lg font-bold">Menú</span>
 				<button
 					aria-label="Cerrar menú"
 					onclick={onClose}
-					class="rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800"
+					class="flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -97,7 +106,7 @@
 			</nav>
 			<button
 				onclick={onToggleTheme}
-				class="mt-auto rounded-md border border-zinc-200 px-3 py-2 text-left transition-colors hover:bg-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-800"
+				class="mt-auto min-h-11 rounded-md border border-zinc-200 px-3 py-2 text-left transition-colors hover:bg-zinc-100 dark:border-zinc-800 dark:hover:bg-zinc-800"
 			>
 				{isDark ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
 			</button>
