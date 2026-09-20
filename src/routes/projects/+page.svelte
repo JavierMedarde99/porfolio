@@ -40,7 +40,10 @@
 	</div>
 
 	{#if filtered.length === 0}
-		<p role="status" class="mt-10 rounded-xl border border-dashed border-zinc-300 p-8 text-center opacity-70 dark:border-zinc-700">
+		<p
+			role="status"
+			class="mt-10 rounded-xl border border-dashed border-zinc-300 p-8 text-center opacity-70 dark:border-zinc-700"
+		>
 			Ningún proyecto coincide con esos filtros. Prueba a limpiarlos.
 		</p>
 	{:else}

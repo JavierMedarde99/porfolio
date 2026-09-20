@@ -26,7 +26,7 @@
 		</a>
 	</div>
 	<ul aria-label="Tecnologías destacadas" class="mt-8 flex flex-wrap justify-center gap-2">
-		{#each HERO_TECHS as tech}
+		{#each HERO_TECHS as tech (tech)}
 			<li><TechBadge technology={tech} /></li>
 		{/each}
 	</ul>

@@ -1,0 +1,11 @@
+.svelte-kit/
+build/
+dist/
+node_modules/
+package/
+package-lock.json
+*.png
+*.jpg
+*.jpeg
+*.webp
+*.ico

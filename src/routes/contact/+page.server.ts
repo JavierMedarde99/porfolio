@@ -30,11 +30,11 @@ export const actions = {
 		if (!RESEND_API_KEY || !CONTACT_TO_EMAIL) {
 			const errors: Record<string, string> = {
 				_server:
-					'Servicio de email no configurado. Escríbeme directamente y te respondo en 24-48h.'
+					'Servicio de email no configurado. Escríbeme directamente y te respondo en 24-48h.',
 			};
 			return fail(503, {
 				errors,
-				values: { nombre, email, asunto, mensaje }
+				values: { nombre, email, asunto, mensaje },
 			});
 		}
 
@@ -42,27 +42,27 @@ export const actions = {
 			method: 'POST',
 			headers: {
 				Authorization: `Bearer ${RESEND_API_KEY}`,
-				'Content-Type': 'application/json'
+				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
 				from: CONTACT_FROM_EMAIL || 'onboarding@resend.com',
 				to: [CONTACT_TO_EMAIL],
 				reply_to: email,
 				subject: asunto ? `[Portfolio] ${asunto}` : `[Portfolio] Mensaje de ${nombre}`,
-				text: `Nombre: ${nombre}\nEmail: ${email}\n\n${mensaje}`
-			})
+				text: `Nombre: ${nombre}\nEmail: ${email}\n\n${mensaje}`,
+			}),
 		});
 
 		if (!response.ok) {
 			const errors: Record<string, string> = {
-				_server: 'No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme por email.'
+				_server: 'No se pudo enviar el mensaje. Inténtalo de nuevo o escríbeme por email.',
 			};
 			return fail(502, {
 				errors,
-				values: { nombre, email, asunto, mensaje }
+				values: { nombre, email, asunto, mensaje },
 			});
 		}
 
 		return { success: true };
-	}
+	},
 } satisfies Actions;

@@ -27,7 +27,7 @@
 	<p class="mt-2 text-lg opacity-80">{project.description}</p>
 
 	<ul aria-label="Tecnologías" class="mt-4 flex flex-wrap gap-2">
-		{#each project.technologies as tech}
+		{#each project.technologies as tech (tech)}
 			<li><TechBadge technology={tech} /></li>
 		{/each}
 	</ul>
@@ -59,7 +59,7 @@
 		<section aria-label="Decisiones técnicas" class="mt-8">
 			<h2 class="text-2xl font-bold">Decisiones técnicas</h2>
 			<ul class="mt-2 flex list-disc flex-col gap-1 pl-5 opacity-90">
-				{#each project.decisions as decision}
+				{#each project.decisions as decision (decision)}
 					<li>{decision}</li>
 				{/each}
 			</ul>
@@ -70,7 +70,7 @@
 		<section aria-label="Problemas resueltos" class="mt-8">
 			<h2 class="text-2xl font-bold">Problemas que resolví</h2>
 			<ul class="mt-2 flex list-disc flex-col gap-1 pl-5 opacity-90">
-				{#each project.problems as problem}
+				{#each project.problems as problem (problem)}
 					<li>{problem}</li>
 				{/each}
 			</ul>
@@ -81,9 +81,9 @@
 		<section aria-label="Galería" class="mt-8">
 			<h2 class="text-2xl font-bold">Galería</h2>
 			<div class="mt-4 grid gap-4 sm:grid-cols-2">
-				{#each project.gallery as src}
+				{#each project.gallery as src (src)}
 					<img
-						src={src}
+						{src}
 						alt={`Imagen de ${project.title}`}
 						loading="lazy"
 						class="w-full rounded-xl border border-zinc-200 dark:border-zinc-800"

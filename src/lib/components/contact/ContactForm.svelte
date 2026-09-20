@@ -21,7 +21,10 @@
 </script>
 
 {#if success}
-	<div role="status" class="rounded-lg border border-green-300 bg-green-50 p-4 dark:border-green-800 dark:bg-green-950">
+	<div
+		role="status"
+		class="rounded-lg border border-green-300 bg-green-50 p-4 dark:border-green-800 dark:bg-green-950"
+	>
 		<p class="font-semibold">Mensaje enviado.</p>
 		<p class="text-sm opacity-80">Gracias por escribir. Te respondo en 24-48h.</p>
 	</div>
@@ -40,7 +43,10 @@
 		class="flex flex-col gap-4"
 	>
 		{#if serverError}
-			<p role="alert" class="rounded-lg border border-red-300 bg-red-50 p-3 text-sm dark:border-red-800 dark:bg-red-950">
+			<p
+				role="alert"
+				class="rounded-lg border border-red-300 bg-red-50 p-3 text-sm dark:border-red-800 dark:bg-red-950"
+			>
 				{serverError}
 			</p>
 		{/if}
@@ -82,7 +88,9 @@
 		</div>
 
 		<div class="flex flex-col gap-1">
-			<label for="asunto" class="text-sm font-medium">Asunto <span class="opacity-60">(opcional)</span></label>
+			<label for="asunto" class="text-sm font-medium"
+				>Asunto <span class="opacity-60">(opcional)</span></label
+			>
 			<input
 				id="asunto"
 				name="asunto"
@@ -104,7 +112,8 @@
 				rows="5"
 				aria-invalid={fieldErrors?.mensaje ? 'true' : undefined}
 				class="rounded-md border border-zinc-300 bg-transparent px-3 py-2 transition-colors focus:border-zinc-500 focus:outline-none dark:border-zinc-700"
-			>{values?.mensaje ?? ''}</textarea>
+				>{values?.mensaje ?? ''}</textarea
+			>
 			{#if fieldErrors?.mensaje}
 				<p class="text-sm text-red-600 dark:text-red-400">{fieldErrors.mensaje}</p>
 			{/if}

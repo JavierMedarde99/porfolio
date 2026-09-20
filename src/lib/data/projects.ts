@@ -4,7 +4,8 @@ export const projects: Project[] = [
 	{
 		slug: 'money-manager',
 		title: 'Money Manager',
-		description: 'API REST de finanzas personales con Spring Boot, auth JWT y PostgreSQL. Desplegada en Render con Swagger UI.',
+		description:
+			'API REST de finanzas personales con Spring Boot, auth JWT y PostgreSQL. Desplegada en Render con Swagger UI.',
 		featured: true,
 		technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'JWT', 'Spring Security', 'OpenAPI'],
 		github: 'https://github.com/JavierMedarde99/money-manager',
@@ -17,17 +18,18 @@ export const projects: Project[] = [
 		decisions: [
 			'JWT stateless para no guardar sesiones en el servidor.',
 			'PostgreSQL como base relacional para datos financieros consistentes.',
-			'OpenAPI/Swagger para que el frontend y terceros consuman la API sin fricción.'
+			'OpenAPI/Swagger para que el frontend y terceros consuman la API sin fricción.',
 		],
 		problems: [
 			'Despliegues gratuitos con arranque en frío: documentado en el README con la URL de Swagger para verificar el estado.',
-			'Gestión de secretos (JWT, credenciales de BD) mediante variables de entorno.'
-		]
+			'Gestión de secretos (JWT, credenciales de BD) mediante variables de entorno.',
+		],
 	},
 	{
 		slug: 'f1-bet',
 		title: 'F1-Bet',
-		description: 'App móvil Flutter para apostar entre amigos las posiciones de Alonso y Sainz, con Supabase y datos de OpenF1.',
+		description:
+			'App móvil Flutter para apostar entre amigos las posiciones de Alonso y Sainz, con Supabase y datos de OpenF1.',
 		featured: true,
 		technologies: ['Flutter', 'Dart', 'Supabase', 'OpenF1 API'],
 		github: 'https://github.com/JavierMedarde99/F1-bet',
@@ -39,17 +41,18 @@ export const projects: Project[] = [
 		decisions: [
 			'Supabase para auth y base de datos sin montar backend propio.',
 			'OpenF1 como fuente oficial de datos de carreras en lugar de scrapear.',
-			'Ventana de apuesta hasta el inicio de carrera para evitar trampas.'
+			'Ventana de apuesta hasta el inicio de carrera para evitar trampas.',
 		],
 		problems: [
 			'Carreras futuras vs finalizadas: estados distintos (Apostar / Resultados / deshabilitado) según la fecha.',
-			'Cálculo de la clasificación por menor diferencia total entre posiciones apostadas y reales.'
-		]
+			'Cálculo de la clasificación por menor diferencia total entre posiciones apostadas y reales.',
+		],
 	},
 	{
 		slug: 'collection-backend',
 		title: 'Collection Backend',
-		description: 'Backend Spring Boot con arquitectura hexagonal para gestionar colecciones (libros, juegos, cartas MTG), con MongoDB y OpenAPI.',
+		description:
+			'Backend Spring Boot con arquitectura hexagonal para gestionar colecciones (libros, juegos, cartas MTG), con MongoDB y OpenAPI.',
 		featured: true,
 		technologies: ['Java', 'Spring Boot', 'MongoDB', 'Hexagonal Architecture', 'OpenAPI'],
 		github: 'https://github.com/JavierMedarde99/backend-collection',
@@ -61,12 +64,12 @@ export const projects: Project[] = [
 		decisions: [
 			'Arquitectura hexagonal para aislar el dominio de los adaptadores externos.',
 			'MongoDB por el modelo de datos flexible (cada tipo de colección tiene atributos distintos).',
-			'Lombok para reducir boilerplate en los modelos.'
+			'Lombok para reducir boilerplate en los modelos.',
 		],
 		problems: [
 			'Modelar dominios heterogéneos (libros, mazos Commander, películas) en colecciones Mongo coherentes.',
-			'Integración con fuentes externas para enriquecer los datos de cada colección.'
-		]
+			'Integración con fuentes externas para enriquecer los datos de cada colección.',
+		],
 	},
 	{
 		slug: 'portfolio',
@@ -83,13 +86,13 @@ export const projects: Project[] = [
 		decisions: [
 			'SvelteKit por su simplicidad y rendimiento frente a SPAs clásicas.',
 			'Datos (proyectos, experiencia) en TypeScript separados de la presentación.',
-			'Server actions para el contacto sin exponer credenciales en el cliente.'
+			'Server actions para el contacto sin exponer credenciales en el cliente.',
 		],
 		problems: [
 			'Compatibilidad de versiones entre SvelteKit, Vite y el plugin de Svelte al fijar dependencias.',
-			'Tema oscuro sin flash de contenido: script pre-hidratación en app.html.'
-		]
-	}
+			'Tema oscuro sin flash de contenido: script pre-hidratación en app.html.',
+		],
+	},
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
