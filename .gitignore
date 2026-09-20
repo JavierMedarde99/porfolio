@@ -1,0 +1,23 @@
+.DS_Store
+node_modules/
+.svelte-kit/
+build/
+.vercel/
+.netlify/
+.output/
+dist/
+
+# Vite
+vite.config.ts.timestamp-*
+
+# SvelteKit
+package/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
