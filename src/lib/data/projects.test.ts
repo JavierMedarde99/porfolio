@@ -19,6 +19,32 @@ describe('projects data', () => {
 		expect(getProjectBySlug('no-existe')).toBeUndefined();
 	});
 
+	it('money-manager es Full Stack con ambos repos y demos', () => {
+		const project = getProjectBySlug('money-manager');
+		expect(project?.category).toBe('Full Stack');
+		expect(project?.githubFrontend).toBe(
+			'https://github.com/JavierMedarde99/money-manager-frontEnd'
+		);
+		expect(project?.demoFrontend).toBe('https://money-manager-front-end-weld.vercel.app');
+		expect(project?.technologies).toEqual(
+			expect.arrayContaining(['React', 'TypeScript', 'Spring Boot'])
+		);
+	});
+
+	it('collection-backend es Full Stack con ambos repos', () => {
+		const project = getProjectBySlug('collection-backend');
+		expect(project?.category).toBe('Full Stack');
+		expect(project?.githubFrontend).toBe('https://github.com/JavierMedarde99/frontend-collection');
+		expect(project?.demoFrontend).toBe('https://frontend-collection-eta.vercel.app');
+	});
+
+	it('wiki-collection es Documentation sin demo', () => {
+		const project = getProjectBySlug('wiki-collection');
+		expect(project?.category).toBe('Documentation');
+		expect(project?.demo).toBeUndefined();
+		expect(project?.technologies).toEqual(expect.arrayContaining(['Markdown']));
+	});
+
 	it('getFeaturedProjects solo devuelve destacados', () => {
 		const featured = getFeaturedProjects();
 		expect(featured.length).toBeGreaterThan(0);
@@ -33,5 +59,24 @@ describe('projects data', () => {
 	it('filterByCategory filtra exacto', () => {
 		expect(filterByCategory('Mobile').map((project) => project.slug)).toEqual(['f1-bet']);
 		expect(filterByCategory('Todas')).toEqual([]);
+	});
+
+	it('filterByCategory agrupa Full Stack y Documentation', () => {
+		expect(
+			filterByCategory('Full Stack')
+				.map((project) => project.slug)
+				.sort()
+		).toEqual(['collection-backend', 'money-manager']);
+		expect(filterByCategory('Documentation').map((project) => project.slug)).toEqual([
+			'wiki-collection',
+		]);
+	});
+
+	it('filterByTechnology encuentra stack frontend', () => {
+		expect(
+			filterByTechnology('React')
+				.map((project) => project.slug)
+				.sort()
+		).toEqual(['collection-backend', 'money-manager']);
 	});
 });
