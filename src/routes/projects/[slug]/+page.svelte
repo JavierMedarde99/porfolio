@@ -106,8 +106,18 @@
 			rel="noreferrer"
 			class="rounded-md border border-zinc-300 px-4 py-2 font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
 		>
-			Ver en GitHub
+			{project.githubFrontend ? 'Backend en GitHub' : 'Ver en GitHub'}
 		</a>
+		{#if project.githubFrontend}
+			<a
+				href={project.githubFrontend}
+				target="_blank"
+				rel="noreferrer"
+				class="rounded-md border border-zinc-300 px-4 py-2 font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
+			>
+				Frontend en GitHub
+			</a>
+		{/if}
 		{#if project.demo}
 			<a
 				href={project.demo}
@@ -115,7 +125,17 @@
 				rel="noreferrer"
 				class="rounded-md bg-zinc-900 px-4 py-2 font-medium text-white transition-opacity hover:opacity-90 dark:bg-white dark:text-zinc-900"
 			>
-				Ver demo
+				{project.demoFrontend ? 'Probar API' : 'Ver demo'}
+			</a>
+		{/if}
+		{#if project.demoFrontend}
+			<a
+				href={project.demoFrontend}
+				target="_blank"
+				rel="noreferrer"
+				class="rounded-md border border-zinc-900 px-4 py-2 font-medium transition-colors hover:bg-zinc-100 dark:border-white dark:hover:bg-zinc-800"
+			>
+				Abrir app
 			</a>
 		{/if}
 	</div>

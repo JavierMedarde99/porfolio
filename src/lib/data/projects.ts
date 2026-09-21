@@ -5,24 +5,38 @@ export const projects: Project[] = [
 		slug: 'money-manager',
 		title: 'Money Manager',
 		description:
-			'API REST de finanzas personales con Spring Boot, auth JWT y PostgreSQL. Desplegada en Render con Swagger UI.',
+			'Sistema completo de finanzas personales: API Spring Boot + app React con dashboard, deploy en Render y Vercel.',
 		featured: true,
-		technologies: ['Java', 'Spring Boot', 'PostgreSQL', 'JWT', 'Spring Security', 'OpenAPI'],
+		technologies: [
+			'Java',
+			'Spring Boot',
+			'PostgreSQL',
+			'JWT',
+			'React',
+			'TypeScript',
+			'Vite',
+			'Tailwind CSS',
+			'Zustand',
+			'Axios',
+		],
 		github: 'https://github.com/JavierMedarde99/money-manager',
+		githubFrontend: 'https://github.com/JavierMedarde99/money-manager-frontEnd',
 		demo: 'https://expense-manager-new.onrender.com',
-		category: 'Backend',
+		demoFrontend: 'https://money-manager-front-end-weld.vercel.app',
+		category: 'Full Stack',
 		descriptionLong:
-			'API REST para gestión de finanzas personales: registro de gastos e ingresos con autenticación stateless mediante JWT (HS256) y contraseñas con BCrypt. Documentada con springdoc-openapi y desplegada en Render sobre PostgreSQL.',
+			'Sistema completo de finanzas personales: backend API REST con Spring Boot (auth JWT stateless, PostgreSQL) y frontend React con dashboard, transacciones, categorías, deudas y perfil de usuario. API desplegada en Render y app en Vercel.',
 		architecture:
-			'API REST por capas con Spring Boot: controladores, servicios y persistencia JPA sobre PostgreSQL. Seguridad con filter chain de Spring Security y documentación OpenAPI generada.',
+			'Backend por capas con Spring Boot y JPA sobre PostgreSQL, documentado con OpenAPI. Frontend React 19 + Vite con Zustand para estado, Axios contra la API, React Router y Recharts para gráficos.',
 		decisions: [
 			'JWT stateless para no guardar sesiones en el servidor.',
-			'PostgreSQL como base relacional para datos financieros consistentes.',
-			'OpenAPI/Swagger para que el frontend y terceros consuman la API sin fricción.',
+			'Zustand en lugar de Redux por simplicidad en un estado de dominio acotado.',
+			'Validación con Zod en formularios y auto-logout en 401.',
+			'OpenAPI/Swagger para que el frontend consuma la API sin fricción.',
 		],
 		problems: [
-			'Despliegues gratuitos con arranque en frío: documentado en el README con la URL de Swagger para verificar el estado.',
-			'Gestión de secretos (JWT, credenciales de BD) mediante variables de entorno.',
+			'API en plan gratuito con arranque en frío: la app muestra estados de carga mientras despierta.',
+			'Gestión de secretos (JWT, credenciales de BD) mediante variables de entorno en ambas plataformas.',
 		],
 	},
 	{
@@ -50,26 +64,56 @@ export const projects: Project[] = [
 	},
 	{
 		slug: 'collection-backend',
-		title: 'Collection Backend',
+		title: 'Collection',
 		description:
-			'Backend Spring Boot con arquitectura hexagonal para gestionar colecciones (libros, juegos, cartas MTG), con MongoDB y OpenAPI.',
+			'Sistema completo para gestionar colecciones (libros, juegos, MTG, cine): API hexagonal + app React, con MongoDB.',
 		featured: true,
-		technologies: ['Java', 'Spring Boot', 'MongoDB', 'Hexagonal Architecture', 'OpenAPI'],
+		technologies: [
+			'Java',
+			'Spring Boot',
+			'MongoDB',
+			'Hexagonal Architecture',
+			'React',
+			'TypeScript',
+			'Vite',
+			'Tailwind CSS',
+		],
 		github: 'https://github.com/JavierMedarde99/backend-collection',
-		category: 'Backend',
+		githubFrontend: 'https://github.com/JavierMedarde99/frontend-collection',
+		demoFrontend: 'https://frontend-collection-eta.vercel.app',
+		category: 'Full Stack',
 		descriptionLong:
-			'Backend Spring Boot para gestionar colecciones personales: libros, videojuegos, juegos de mesa, cartas Magic (incluye mazos Commander) y películas/series. Expone una API REST documentada con OpenAPI y persiste en MongoDB.',
+			'Sistema completo para gestionar colecciones personales: libros, videojuegos, juegos de mesa, cartas Magic (incluye mazos Commander) y películas/series. Backend Spring Boot con arquitectura hexagonal sobre MongoDB y frontend React con listados, filtros, detalle y alta con APIs externas (Google Books, RAWG, Scryfall, TMDB).',
 		architecture:
-			'Arquitectura hexagonal: domain/ (modelos y puertos) ← application/ (servicios) ← infrastructure/ (adaptadores web, persistencia y clientes externos). Cobertura con JaCoCo.',
+			'Backend hexagonal: domain/ (modelos y puertos) ← application/ (servicios) ← infrastructure/ (adaptadores web, persistencia y clientes externos). Frontend React con React Router y llamadas relativas a /api. Cobertura backend con JaCoCo.',
 		decisions: [
 			'Arquitectura hexagonal para aislar el dominio de los adaptadores externos.',
 			'MongoDB por el modelo de datos flexible (cada tipo de colección tiene atributos distintos).',
-			'Lombok para reducir boilerplate en los modelos.',
+			'Frontend con URLs relativas /api para no acoplar entornos.',
 		],
 		problems: [
 			'Modelar dominios heterogéneos (libros, mazos Commander, películas) en colecciones Mongo coherentes.',
-			'Integración con fuentes externas para enriquecer los datos de cada colección.',
+			'Integración con fuentes externas (Scryfall, BoardGameGeek, TMDB) con formatos dispares.',
 		],
+	},
+	{
+		slug: 'wiki-collection',
+		title: 'Wiki Collection',
+		description:
+			'Documentación central del sistema Collection: arquitectura, fases y guías de cada módulo.',
+		featured: false,
+		technologies: ['Markdown', 'GitHub Wiki'],
+		github: 'https://github.com/JavierMedarde99/wiki-collection',
+		category: 'Documentation',
+		descriptionLong:
+			'Repositorio de documentación del sistema Collection: describe la arquitectura (backend Spring Boot + MongoDB, frontend React), las APIs externas integradas y el estado de cada fase (libros, videojuegos, juegos de mesa, Magic, Commander, películas/series).',
+		architecture:
+			'Wiki en Markdown organizada por módulos, con tabla de fases y enlaces a los repos de backend y frontend.',
+		decisions: [
+			'Documentar por fases para que cada módulo sea navegable por separado.',
+			'GitHub Wiki para editar sin pasar por PRs.',
+		],
+		problems: ['Mantener la wiki sincronizada con los cambios de backend y frontend.'],
 	},
 	{
 		slug: 'portfolio',

@@ -55,12 +55,14 @@
 			{/each}
 		</ul>
 
-		<div class="mt-auto flex gap-2 pt-2">
+		<div class="mt-auto flex flex-wrap gap-2 pt-2">
 			<a
 				href={project.github}
 				target="_blank"
 				rel="noreferrer"
-				aria-label={`Código de ${project.title} en GitHub`}
+				aria-label={project.githubFrontend
+					? `Código backend de ${project.title} en GitHub`
+					: `Código de ${project.title} en GitHub`}
 				class="flex items-center gap-1.5 rounded-md border border-zinc-300 px-3 py-1.5 text-sm font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
 			>
 				<svg
@@ -80,17 +82,28 @@
 					/>
 					<path d="M9 18c-4.51 2-5-2-7-2" />
 				</svg>
-				GitHub
+				{project.githubFrontend ? 'Backend' : 'GitHub'}
 			</a>
+			{#if project.githubFrontend}
+				<a
+					href={project.githubFrontend}
+					target="_blank"
+					rel="noreferrer"
+					aria-label={`Código frontend de ${project.title} en GitHub`}
+					class="flex items-center gap-1.5 rounded-md border border-zinc-300 px-3 py-1.5 text-sm font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
+				>
+					Frontend
+				</a>
+			{/if}
 			{#if project.demo}
 				<a
 					href={project.demo}
 					target="_blank"
 					rel="noreferrer"
-					aria-label={`Demo de ${project.title}`}
+					aria-label={project.demoFrontend ? `API de ${project.title}` : `Demo de ${project.title}`}
 					class="flex items-center gap-1.5 rounded-md bg-zinc-900 px-3 py-1.5 text-sm font-medium text-white transition-opacity hover:opacity-90 dark:bg-white dark:text-zinc-900"
 				>
-					Demo
+					{project.demoFrontend ? 'API' : 'Demo'}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="14"
@@ -106,6 +119,17 @@
 						<path d="M7 7h10v10" />
 						<path d="M7 17 17 7" />
 					</svg>
+				</a>
+			{/if}
+			{#if project.demoFrontend}
+				<a
+					href={project.demoFrontend}
+					target="_blank"
+					rel="noreferrer"
+					aria-label={`App de ${project.title}`}
+					class="flex items-center gap-1.5 rounded-md border border-zinc-900 px-3 py-1.5 text-sm font-medium transition-colors hover:bg-zinc-100 dark:border-white dark:hover:bg-zinc-800"
+				>
+					App
 				</a>
 			{/if}
 		</div>
