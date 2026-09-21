@@ -51,8 +51,8 @@
 		</p>
 		<p>
 			Me interesa construir sistemas robustos, escalables y bien testeados. Cuando el proyecto lo
-			pide, también bajo al frontend (Svelte, React) o al móvil (Flutter) para entregar la pieza
-			completa.
+			pide, también uso tecnología frontend (Svelte, React) y móvil (Flutter) para hacer el flujo
+			completo.
 		</p>
 		<p>
 			Vivo en Marbella y trabajo con equipos en inglés cuando hace falta.
