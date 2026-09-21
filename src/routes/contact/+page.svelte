@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SocialMeta from '$lib/components/seo/SocialMeta.svelte';
-	import { pageTitle } from '$lib/utils/seo';
+	import { pageTitle, SITE } from '$lib/utils/seo';
 	import ContactForm from '$lib/components/contact/ContactForm.svelte';
 	import type { ActionData } from './$types';
 
@@ -17,6 +17,7 @@
 		name="description"
 		content="Contacta con Javi Med: formulario, email, GitHub y LinkedIn. Respuesta en 24-48h."
 	/>
+	<link rel="canonical" href={SITE.url + '/contact'} />
 </svelte:head>
 <SocialMeta
 	title="Contacto | Javi Med"

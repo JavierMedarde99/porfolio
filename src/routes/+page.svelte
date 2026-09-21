@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SocialMeta from '$lib/components/seo/SocialMeta.svelte';
-	import { pageTitle } from '$lib/utils/seo';
+	import { pageTitle, SITE } from '$lib/utils/seo';
 	import AboutPreview from '$lib/components/home/AboutPreview.svelte';
 	import FeaturedProjects from '$lib/components/home/FeaturedProjects.svelte';
 	import Hero from '$lib/components/home/Hero.svelte';
@@ -13,6 +13,7 @@
 		name="description"
 		content="Portfolio de Javi Med: Java, Spring Boot, microservicios y proyectos full stack."
 	/>
+	<link rel="canonical" href={SITE.url + '/'} />
 </svelte:head>
 <SocialMeta
 	title="Javi Med | Backend & Full Stack Developer"
