@@ -56,7 +56,7 @@
 			<button
 				onclick={toggleTheme}
 				aria-label={$theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
-				class="rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800"
+				class="flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800"
 			>
 				{#if $theme === 'dark'}
 					<svg
@@ -104,7 +104,7 @@
 				onclick={() => (menuOpen = true)}
 				aria-label="Abrir menú"
 				aria-expanded={menuOpen}
-				class="rounded-md p-2 transition-colors hover:bg-zinc-100 md:hidden dark:hover:bg-zinc-800"
+				class="flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 transition-colors hover:bg-zinc-100 md:hidden dark:hover:bg-zinc-800"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"

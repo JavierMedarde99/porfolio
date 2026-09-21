@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { SITE } from '$lib/utils/seo';
+	import SocialMeta from '$lib/components/seo/SocialMeta.svelte';
+	import { pageTitle, SITE } from '$lib/utils/seo';
 	import ProjectCard from '$lib/components/projects/ProjectCard.svelte';
 	import ProjectFilter from '$lib/components/projects/ProjectFilter.svelte';
 	import type { CategoryFilter } from '$lib/components/projects/ProjectFilter.svelte';
@@ -25,13 +26,18 @@
 </script>
 
 <svelte:head>
-	<title>Proyectos | Javi Med</title>
+	<title>{pageTitle('Proyectos')}</title>
 	<meta
 		name="description"
 		content="Proyectos de Javi Med: backend con Spring Boot, apps móviles con Flutter y frontend con SvelteKit."
 	/>
 	<link rel="canonical" href={SITE.url + '/projects'} />
 </svelte:head>
+<SocialMeta
+	title="Proyectos | Javi Med"
+	description="Proyectos de Javi Med: backend con Spring Boot, apps móviles con Flutter y frontend con SvelteKit."
+	path="/projects"
+/>
 
 <main class="mx-auto max-w-5xl px-4 py-12">
 	<h1 class="text-3xl font-bold tracking-tight">Proyectos</h1>
