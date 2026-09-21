@@ -1,4 +1,5 @@
 <script lang="ts">
+	import SocialMeta from '$lib/components/seo/SocialMeta.svelte';
 	import { reveal } from '$lib/actions/reveal';
 	import { pageTitle } from '$lib/utils/seo';
 	import TechBadge from '$lib/components/projects/TechBadge.svelte';
@@ -31,6 +32,11 @@
 		content="Javi Med: Java Backend Developer con más de 3 años de experiencia en Spring Boot, microservicios y cloud."
 	/>
 </svelte:head>
+<SocialMeta
+	title="Sobre mí | Javi Med"
+	description="Javi Med: Java Backend Developer con más de 3 años de experiencia en Spring Boot, microservicios y cloud."
+	path="/about"
+/>
 
 <main class="mx-auto max-w-4xl px-4 py-12">
 	<h1 class="text-3xl font-bold tracking-tight">Sobre mí</h1>
