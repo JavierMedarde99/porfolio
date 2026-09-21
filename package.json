@@ -12,8 +12,8 @@
 		"format": "prettier --write .",
 		"format:check": "prettier --check .",
 		"test": "vitest",
-		"test:run": "vitest run",
-		"test:coverage": "vitest run --coverage"
+		"test:run": "svelte-kit sync && vitest run",
+		"test:coverage": "svelte-kit sync && vitest run --coverage"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^7.0.0",
