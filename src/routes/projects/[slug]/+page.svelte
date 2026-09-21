@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { pageTitle } from '$lib/utils/seo';
 	import SocialMeta from '$lib/components/seo/SocialMeta.svelte';
 	import TechBadge from '$lib/components/projects/TechBadge.svelte';
 	import type { PageData } from './$types';
@@ -12,7 +13,7 @@
 </script>
 
 <svelte:head>
-	<title>{project.title} | Javi Med</title>
+	<title>{pageTitle(project.title)}</title>
 	<meta name="description" content={project.description} />
 	<link rel="canonical" href={`https://javiermedarde99.github.io/projects/${project.slug}`} />
 </svelte:head>
