@@ -1,6 +1,6 @@
 <script lang="ts">
 	import SocialMeta from '$lib/components/seo/SocialMeta.svelte';
-	import { pageTitle } from '$lib/utils/seo';
+	import { pageTitle, SITE } from '$lib/utils/seo';
 	import ProjectCard from '$lib/components/projects/ProjectCard.svelte';
 	import ProjectFilter from '$lib/components/projects/ProjectFilter.svelte';
 	import type { CategoryFilter } from '$lib/components/projects/ProjectFilter.svelte';
@@ -31,6 +31,7 @@
 		name="description"
 		content="Proyectos de Javi Med: backend con Spring Boot, apps móviles con Flutter y frontend con SvelteKit."
 	/>
+	<link rel="canonical" href={SITE.url + '/projects'} />
 </svelte:head>
 <SocialMeta
 	title="Proyectos | Javi Med"

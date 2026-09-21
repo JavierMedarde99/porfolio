@@ -1,7 +1,7 @@
 <script lang="ts">
 	import SocialMeta from '$lib/components/seo/SocialMeta.svelte';
 	import { reveal } from '$lib/actions/reveal';
-	import { pageTitle } from '$lib/utils/seo';
+	import { pageTitle, SITE } from '$lib/utils/seo';
 	import ExperienceCard from '$lib/components/experience/ExperienceCard.svelte';
 	import { EDUCATION, EXPERIENCES } from '$lib/data/experience';
 </script>
@@ -12,6 +12,7 @@
 		name="description"
 		content="Trayectoria profesional de Javi Med: más de 3 años como Java Developer con Spring Boot, microservicios y cloud."
 	/>
+	<link rel="canonical" href={SITE.url + '/experience'} />
 </svelte:head>
 <SocialMeta
 	title="Experiencia | Javi Med"
