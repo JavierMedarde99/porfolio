@@ -31,19 +31,15 @@ Fuente: `src/lib/data/projects.ts`.
 
 Fuente: `COURSES` en `src/lib/data/experience.ts` (misma lista que el CV, con enlace al certificado).
 
-| Curso                 | Plataforma | Certificado                                                                               |
-| --------------------- | ---------- | ----------------------------------------------------------------------------------------- |
-| Cybersecurity at work | Google     | [ver](https://drive.google.com/file/d/1CRGBZ7xkiOupEvlnxD4Ny9z1WPbMnw8L/view?usp=sharing) |
-| Spring Test           | Udemy      | [ver](https://drive.google.com/file/d/1HAuGXAN3x-3hqFor722IntGpYwsZGe-u/view?usp=sharing) |
-| SOLID Principles      | Udemy      | [ver](https://drive.google.com/file/d/1akuOijmkQlijLKlsMUr9DELvFwcjIMbM/view?usp=sharing) |
-| MongoDB               | Platzi     | [ver](https://drive.google.com/file/d/1GyViCy7Men4pjPIcCSHMgZqeniozjHOR/view?usp=sharing) |
-| React                 | Platzi     | [ver](https://drive.google.com/file/d/1cPOp3So9ji4ezOWsMpI0BIbG58UaR6Al/view?usp=sharing) |
-| MariaDB               | Udemy      | [ver](https://drive.google.com/file/d/13TzQ2PVrYzq2us4_io8Ku75ytO-frnSl/view?usp=sharing) |
-| Python                | Udemy      | [ver](https://drive.google.com/file/d/1stP1vanF-2yPUr-QNSQWKdx-l-zfLlCj/view?usp=sharing) |
-| Google Hacking        | Udemy      | [ver](https://drive.google.com/file/d/1iGq9P2Rf2nD0R10HdvLyMfOJqYtYbJkm/view?usp=sharing) |
-| AI for Work           | Datacamp   | [ver](https://drive.google.com/file/d/1c412FtiRvSe_FvbOXohqSs0d9isOKhgn/view?usp=sharing) |
-| LLM Concepts          | Datacamp   | [ver](https://drive.google.com/file/d/1vnexAmkcdcdWHavvTGOsURHFxjBbNxo0/view?usp=sharing) |
-| Machine Learning      | Datacamp   | [ver](https://drive.google.com/file/d/1GeYwadT6rEfXosM_-Ph_SOqXkZqOSnbm/view?usp=sharing) |
+| Curso                                                 | Plataforma | Certificado                                                                                                                                                                                                                                                             |
+| ----------------------------------------------------- | ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Spring Test                                           | Udemy      | [ver](https://drive.google.com/file/d/1HAuGXAN3x-3hqFor722IntGpYwsZGe-u/view?usp=sharing)                                                                                                                                                                               |
+| SOLID Principles                                      | Udemy      | [ver](https://drive.google.com/file/d/1akuOijmkQlijLKlsMUr9DELvFwcjIMbM/view?usp=sharing)                                                                                                                                                                               |
+| MongoDB                                               | Platzi     | [ver](https://drive.google.com/file/d/1GyViCy7Men4pjPIcCSHMgZqeniozjHOR/view?usp=sharing)                                                                                                                                                                               |
+| React                                                 | Platzi     | [ver](https://drive.google.com/file/d/1cPOp3So9ji4ezOWsMpI0BIbG58UaR6Al/view?usp=sharing)                                                                                                                                                                               |
+| MariaDB                                               | Udemy      | [ver](https://drive.google.com/file/d/13TzQ2PVrYzq2us4_io8Ku75ytO-frnSl/view?usp=sharing)                                                                                                                                                                               |
+| Python                                                | Udemy      | [ver](https://drive.google.com/file/d/1stP1vanF-2yPUr-QNSQWKdx-l-zfLlCj/view?usp=sharing)                                                                                                                                                                               |
+| Pack IA (AI for Work, LLM Concepts, Machine Learning) | Datacamp   | [1](https://drive.google.com/file/d/1c412FtiRvSe_FvbOXohqSs0d9isOKhgn/view?usp=sharing) [2](https://drive.google.com/file/d/1vnexAmkcdcdWHavvTGOsURHFxjBbNxo0/view?usp=sharing) [3](https://drive.google.com/file/d/1GeYwadT6rEfXosM_-Ph_SOqXkZqOSnbm/view?usp=sharing) |
 
 ## Arranque
 

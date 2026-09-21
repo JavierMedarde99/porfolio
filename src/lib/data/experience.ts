@@ -13,20 +13,21 @@ export interface Education {
 	description?: string;
 }
 
+export interface CourseItem {
+	title: string;
+	credentialUrl?: string;
+}
+
 export interface Course {
 	title: string;
 	platform: string;
 	credentialUrl?: string;
+	items?: CourseItem[];
 }
 
 const drive = (id: string): string => `https://drive.google.com/file/d/${id}/view?usp=sharing`;
 
 export const COURSES: Course[] = [
-	{
-		title: 'Cybersecurity at work',
-		platform: 'Google',
-		credentialUrl: drive('1CRGBZ7xkiOupEvlnxD4Ny9z1WPbMnw8L'),
-	},
 	{
 		title: 'Spring Test',
 		platform: 'Udemy',
@@ -50,24 +51,13 @@ export const COURSES: Course[] = [
 	},
 	{ title: 'Python', platform: 'Udemy', credentialUrl: drive('1stP1vanF-2yPUr-QNSQWKdx-l-zfLlCj') },
 	{
-		title: 'Google Hacking',
-		platform: 'Udemy',
-		credentialUrl: drive('1iGq9P2Rf2nD0R10HdvLyMfOJqYtYbJkm'),
-	},
-	{
-		title: 'AI for Work',
+		title: 'Pack IA',
 		platform: 'Datacamp',
-		credentialUrl: drive('1c412FtiRvSe_FvbOXohqSs0d9isOKhgn'),
-	},
-	{
-		title: 'LLM Concepts',
-		platform: 'Datacamp',
-		credentialUrl: drive('1vnexAmkcdcdWHavvTGOsURHFxjBbNxo0'),
-	},
-	{
-		title: 'Machine Learning',
-		platform: 'Datacamp',
-		credentialUrl: drive('1GeYwadT6rEfXosM_-Ph_SOqXkZqOSnbm'),
+		items: [
+			{ title: 'AI for Work', credentialUrl: drive('1c412FtiRvSe_FvbOXohqSs0d9isOKhgn') },
+			{ title: 'LLM Concepts', credentialUrl: drive('1vnexAmkcdcdWHavvTGOsURHFxjBbNxo0') },
+			{ title: 'Machine Learning', credentialUrl: drive('1GeYwadT6rEfXosM_-Ph_SOqXkZqOSnbm') },
+		],
 	},
 ];
 

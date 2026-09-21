@@ -57,7 +57,26 @@
 				>
 					<h3 class="font-semibold">{course.title}</h3>
 					<p class="text-sm opacity-70">{course.platform}</p>
-					{#if course.credentialUrl}
+					{#if course.items}
+						<ul class="mt-1 flex flex-col gap-1">
+							{#each course.items as item (item.title)}
+								<li>
+									{#if item.credentialUrl}
+										<a
+											href={item.credentialUrl}
+											target="_blank"
+											rel="noopener noreferrer"
+											class="text-sm font-medium underline underline-offset-4"
+										>
+											{item.title} →
+										</a>
+									{:else}
+										<span class="text-sm">{item.title}</span>
+									{/if}
+								</li>
+							{/each}
+						</ul>
+					{:else if course.credentialUrl}
 						<a
 							href={course.credentialUrl}
 							target="_blank"
