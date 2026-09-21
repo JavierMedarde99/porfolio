@@ -11,6 +11,7 @@ export default tseslint.config(
 			'dist/',
 			'node_modules/',
 			'static/',
+			'.vercel/',
 			'test-results/',
 			'playwright-report/',
 		],
