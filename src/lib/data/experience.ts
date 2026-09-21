@@ -13,6 +13,64 @@ export interface Education {
 	description?: string;
 }
 
+export interface Course {
+	title: string;
+	platform: string;
+	credentialUrl?: string;
+}
+
+const drive = (id: string): string => `https://drive.google.com/file/d/${id}/view?usp=sharing`;
+
+export const COURSES: Course[] = [
+	{
+		title: 'Cybersecurity at work',
+		platform: 'Google',
+		credentialUrl: drive('1CRGBZ7xkiOupEvlnxD4Ny9z1WPbMnw8L'),
+	},
+	{
+		title: 'Spring Test',
+		platform: 'Udemy',
+		credentialUrl: drive('1HAuGXAN3x-3hqFor722IntGpYwsZGe-u'),
+	},
+	{
+		title: 'SOLID Principles',
+		platform: 'Udemy',
+		credentialUrl: drive('1akuOijmkQlijLKlsMUr9DELvFwcjIMbM'),
+	},
+	{
+		title: 'MongoDB',
+		platform: 'Platzi',
+		credentialUrl: drive('1GyViCy7Men4pjPIcCSHMgZqeniozjHOR'),
+	},
+	{ title: 'React', platform: 'Platzi', credentialUrl: drive('1cPOp3So9ji4ezOWsMpI0BIbG58UaR6Al') },
+	{
+		title: 'MariaDB',
+		platform: 'Udemy',
+		credentialUrl: drive('13TzQ2PVrYzq2us4_io8Ku75ytO-frnSl'),
+	},
+	{ title: 'Python', platform: 'Udemy', credentialUrl: drive('1stP1vanF-2yPUr-QNSQWKdx-l-zfLlCj') },
+	{
+		title: 'Google Hacking',
+		platform: 'Udemy',
+		credentialUrl: drive('1iGq9P2Rf2nD0R10HdvLyMfOJqYtYbJkm'),
+	},
+	{
+		title: 'AI for Work',
+		platform: 'Datacamp',
+		credentialUrl: drive('1c412FtiRvSe_FvbOXohqSs0d9isOKhgn'),
+	},
+	{
+		title: 'LLM Concepts',
+		platform: 'Datacamp',
+		credentialUrl: drive('1vnexAmkcdcdWHavvTGOsURHFxjBbNxo0'),
+	},
+	{
+		title: 'Machine Learning',
+		platform: 'Datacamp',
+		credentialUrl: drive('1GeYwadT6rEfXosM_-Ph_SOqXkZqOSnbm'),
+	},
+];
+
 export const EXPERIENCES: Experience[] = [
 	{
 		role: 'Java Developer Senior',
