@@ -30,14 +30,14 @@
 
 	<div class="flex flex-1 flex-col gap-3 p-5">
 		<div class="flex items-start justify-between gap-2">
-			<h3 class="text-lg font-bold">
+			<h2 class="text-lg font-bold">
 				<a
 					href={`/projects/${project.slug}`}
 					class="transition-colors group-hover:underline focus:outline-none"
 				>
 					{project.title}
 				</a>
-			</h3>
+			</h2>
 			{#if project.category}
 				<span
 					class="shrink-0 rounded-md bg-zinc-100 px-2 py-1 text-xs font-medium dark:bg-zinc-800"
