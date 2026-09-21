@@ -1,11 +1,12 @@
 <script lang="ts">
+	import { reveal } from '$lib/actions/reveal';
 	import ProjectCard from '$lib/components/projects/ProjectCard.svelte';
 	import { getFeaturedProjects } from '$lib/data/projects';
 
 	const featured = getFeaturedProjects().slice(0, 3);
 </script>
 
-<section aria-label="Proyectos destacados" class="mx-auto max-w-5xl px-4 py-12">
+<section use:reveal aria-label="Proyectos destacados" class="mx-auto max-w-5xl px-4 py-12">
 	<div class="flex items-end justify-between gap-4">
 		<h2 class="text-2xl font-bold tracking-tight">Proyectos destacados</h2>
 		<a href="/projects" class="shrink-0 text-sm font-medium underline underline-offset-4">
