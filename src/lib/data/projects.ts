@@ -21,7 +21,7 @@ export const projects: Project[] = [
 		],
 		github: 'https://github.com/JavierMedarde99/money-manager',
 		githubFrontend: 'https://github.com/JavierMedarde99/money-manager-frontEnd',
-		demo: 'https://expense-manager-new.onrender.com',
+		demo: 'https://expense-manager-new.onrender.com/swagger-ui/index.html',
 		demoFrontend: 'https://money-manager-front-end-weld.vercel.app',
 		category: 'Full Stack',
 		descriptionLong:
@@ -80,6 +80,7 @@ export const projects: Project[] = [
 		],
 		github: 'https://github.com/JavierMedarde99/backend-collection',
 		githubFrontend: 'https://github.com/JavierMedarde99/frontend-collection',
+		demo: 'https://backend-collection.onrender.com/swagger-ui/index.html',
 		demoFrontend: 'https://frontend-collection-eta.vercel.app',
 		category: 'Full Stack',
 		descriptionLong:
