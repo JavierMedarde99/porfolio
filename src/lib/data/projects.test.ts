@@ -26,6 +26,7 @@ describe('projects data', () => {
 			'https://github.com/JavierMedarde99/money-manager-frontEnd'
 		);
 		expect(project?.demoFrontend).toBe('https://money-manager-front-end-weld.vercel.app');
+		expect(project?.demo).toBe('https://expense-manager-new.onrender.com/swagger-ui/index.html');
 		expect(project?.technologies).toEqual(
 			expect.arrayContaining(['React', 'TypeScript', 'Spring Boot'])
 		);
@@ -36,6 +37,7 @@ describe('projects data', () => {
 		expect(project?.category).toBe('Full Stack');
 		expect(project?.githubFrontend).toBe('https://github.com/JavierMedarde99/frontend-collection');
 		expect(project?.demoFrontend).toBe('https://frontend-collection-eta.vercel.app');
+		expect(project?.demo).toBe('https://backend-collection.onrender.com/swagger-ui/index.html');
 	});
 
 	it('wiki-collection es Documentation sin demo', () => {
