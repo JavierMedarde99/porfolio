@@ -35,9 +35,12 @@ export default tseslint.config(
 	...svelte.configs['flat/prettier'],
 	{
 		rules: {
-			'no-console': ['warn', { allow: ['warn', 'error'] }],
-			// Sin base path configurado: los href planos son correctos
-			'svelte/no-navigation-without-resolve': 'off',
+		'no-console': ['warn', { allow: ['warn', 'error'] }],
+		// La app se despliega en el root (Vercel, sin paths.base): los href
+		// absolutos planos ('/about', '/projects/...') siempre resuelven bien.
+		// La regla solo aportaría si hubiera subpath o rutas dinámicas
+		// construidas por string; si eso cambia, reactivarla y usar resolve().
+		'svelte/no-navigation-without-resolve': 'off',
 		},
 	}
 );
