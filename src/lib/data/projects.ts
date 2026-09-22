@@ -117,6 +117,8 @@ export const projects: Project[] = [
 		problems: ['Mantener la wiki sincronizada con los cambios de backend y frontend.'],
 	},
 	{
+		// Intencional: el propio portfolio se lista como proyecto porque demuestra
+		// el stack (SvelteKit, SEO, CI). No destacado para no canibalizar el resto.
 		slug: 'portfolio',
 		title: 'Portfolio',
 		description: 'Este portfolio: SvelteKit 5 + TypeScript + Tailwind CSS con dark mode, SEO y CI.',
