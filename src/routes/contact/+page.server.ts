@@ -1,5 +1,6 @@
 import { fail } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
+import { validateEmailEnv } from '$lib/server/config';
 import type { Actions } from './$types';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -25,9 +26,10 @@ export const actions = {
 			return fail(400, { errors, values: { nombre, email, asunto, mensaje } });
 		}
 
-		const { RESEND_API_KEY, CONTACT_TO_EMAIL, CONTACT_FROM_EMAIL } = env;
+		const { config: emailConfig, missing } = validateEmailEnv(env);
 
-		if (!RESEND_API_KEY || !CONTACT_TO_EMAIL) {
+		if (!emailConfig) {
+			console.warn(`[contact] Email no configurado, faltan: ${missing.join(', ')}`);
 			const errors: Record<string, string> = {
 				_server:
 					'Servicio de email no configurado. Escríbeme directamente y te respondo en 24-48h.',
@@ -41,12 +43,12 @@ export const actions = {
 		const response = await fetch('https://api.resend.com/emails', {
 			method: 'POST',
 			headers: {
-				Authorization: `Bearer ${RESEND_API_KEY}`,
+				Authorization: `Bearer ${emailConfig.resendApiKey}`,
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-				from: CONTACT_FROM_EMAIL || 'onboarding@resend.com',
-				to: [CONTACT_TO_EMAIL],
+				from: emailConfig.fromEmail,
+				to: [emailConfig.toEmail],
 				reply_to: email,
 				subject: asunto ? `[Portfolio] ${asunto}` : `[Portfolio] Mensaje de ${nombre}`,
 				text: `Nombre: ${nombre}\nEmail: ${email}\n\n${mensaje}`,
