@@ -1,17 +1,21 @@
+<script module lang="ts">
+	import { projects } from '$lib/data/projects';
+
+	// projects es estático: se calcula una vez, no en cada render
+	export const availableTechnologies = [
+		...new Set(projects.flatMap((project) => project.technologies))
+	].sort();
+</script>
+
 <script lang="ts">
 	import SocialMeta from '$lib/components/seo/SocialMeta.svelte';
 	import { pageTitle, SITE } from '$lib/utils/seo';
 	import ProjectCard from '$lib/components/projects/ProjectCard.svelte';
 	import ProjectFilter from '$lib/components/projects/ProjectFilter.svelte';
 	import type { CategoryFilter } from '$lib/components/projects/ProjectFilter.svelte';
-	import { projects } from '$lib/data/projects';
 
 	let category = $state<CategoryFilter>('Todos');
 	let selectedTechnologies = $state<string[]>([]);
-
-	const availableTechnologies = $derived(
-		[...new Set(projects.flatMap((project) => project.technologies))].sort()
-	);
 
 	const filtered = $derived(
 		projects
