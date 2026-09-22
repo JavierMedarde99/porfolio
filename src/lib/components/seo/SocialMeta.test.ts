@@ -2,7 +2,7 @@ import { render } from '@testing-library/svelte';
 import { describe, expect, it } from 'vitest';
 import SocialMeta from '$lib/components/seo/SocialMeta.svelte';
 
-function headContent(selector: string): string | null {
+function headContent(selector: string): string | null | undefined {
 	return document.head.querySelector(selector)?.getAttribute('content');
 }
 

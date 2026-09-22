@@ -11,7 +11,7 @@ const PROPS = {
 describe('ProjectFilter', () => {
 	it('cambia la categoría marcada al pulsar', async () => {
 		render(ProjectFilter, { props: { ...PROPS } });
-		const mobile = screen.getByRole('button', { name: 'Mobile', exact: true });
+		const mobile = screen.getByRole('button', { name: 'Mobile' });
 		expect(mobile).toHaveAttribute('aria-pressed', 'false');
 		await fireEvent.click(mobile);
 		expect(mobile).toHaveAttribute('aria-pressed', 'true');
