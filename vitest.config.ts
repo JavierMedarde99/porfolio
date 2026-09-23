@@ -21,6 +21,10 @@ export default defineConfig({
 				find: '$app/stores',
 				replacement: fileURLToPath(new URL('./src/test/mocks/app-stores.ts', import.meta.url)),
 			},
+			{
+				find: '$app/navigation',
+				replacement: fileURLToPath(new URL('./src/test/mocks/app-navigation.ts', import.meta.url)),
+			},
 		],
 	},
 });

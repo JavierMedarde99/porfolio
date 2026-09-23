@@ -65,7 +65,7 @@ export const EXPERIENCES: Experience[] = [
 	{
 		role: 'Java Developer Senior',
 		company: 'IDB-mobile',
-		period: 'ago 2026 — actualidad',
+		period: 'agosto 2026 — actualidad',
 		description: [
 			'Desarrollo de APIs BFF para la conexión de datos con el frontend.',
 			'Desarrollo con agentes e IA para aumentar la productividad del equipo.',
@@ -83,7 +83,7 @@ export const EXPERIENCES: Experience[] = [
 	{
 		role: 'Java Developer Junior/Mid',
 		company: 'IDB-mobile',
-		period: 'mar 2022 — may 2026',
+		period: 'marzo 2022 — mayo 2026',
 		description: [
 			'Desarrollo y mantenimiento de un sistema de pago móvil con pasarelas de pago, integrando microservicios con comunicación asíncrona (RabbitMQ, Apache Kafka).',
 			'Arquitectura MVC con Spring Boot y Thymeleaf, gestionando el ciclo completo de petición en el backend.',

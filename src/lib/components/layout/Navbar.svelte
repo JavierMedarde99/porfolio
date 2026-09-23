@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { afterNavigate } from '$app/navigation';
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 	import { NAV_LINKS } from '$lib/data/navigation';
@@ -12,6 +13,12 @@
 		menuOpen = false;
 		menuButton?.focus();
 	}
+
+	// Cierra el menú ante cualquier navegación (click, teclado, programática),
+	// no solo ante clicks explícitos en los links
+	afterNavigate(() => {
+		menuOpen = false;
+	});
 
 	onMount(() => {
 		initTheme();
