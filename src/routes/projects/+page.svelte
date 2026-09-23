@@ -3,7 +3,7 @@
 
 	// projects es estático: se calcula una vez, no en cada render
 	export const availableTechnologies = [
-		...new Set(projects.flatMap((project) => project.technologies))
+		...new Set(projects.flatMap((project) => project.technologies)),
 	].sort();
 </script>
 
