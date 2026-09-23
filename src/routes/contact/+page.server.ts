@@ -1,6 +1,7 @@
 import { fail } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 import { validateEmailEnv } from '$lib/server/config';
+import { buildSubject } from '$lib/server/email';
 import type { Actions } from './$types';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -50,7 +51,7 @@ export const actions = {
 				from: emailConfig.fromEmail,
 				to: [emailConfig.toEmail],
 				reply_to: email,
-				subject: asunto ? `[Portfolio] ${asunto}` : `[Portfolio] Mensaje de ${nombre}`,
+				subject: buildSubject(asunto, nombre),
 				text: `Nombre: ${nombre}\nEmail: ${email}\n\n${mensaje}`,
 			}),
 		});

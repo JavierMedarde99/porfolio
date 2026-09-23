@@ -41,12 +41,18 @@ Fuente: `COURSES` en `src/lib/data/experience.ts` (misma lista que el CV, con en
 | Python                                                | Udemy      | [ver](https://drive.google.com/file/d/1stP1vanF-2yPUr-QNSQWKdx-l-zfLlCj/view?usp=sharing)                                                                                                                                                                               |
 | Pack IA (AI for Work, LLM Concepts, Machine Learning) | Datacamp   | [1](https://drive.google.com/file/d/1c412FtiRvSe_FvbOXohqSs0d9isOKhgn/view?usp=sharing) [2](https://drive.google.com/file/d/1vnexAmkcdcdWHavvTGOsURHFxjBbNxo0/view?usp=sharing) [3](https://drive.google.com/file/d/1GeYwadT6rEfXosM_-Ph_SOqXkZqOSnbm/view?usp=sharing) |
 
-## Arranque
+## Desarrollo local
+
+Prerrequisitos: Node.js 22+ (recomendado 22 LTS, CI usa 22) y npm 10+.
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
+cp .env.example .env   # solo necesario para probar el envío real del formulario
+npm run dev            # http://localhost:5173
 ```
+
+Variables de entorno (ver `.env.example`): sin `RESEND_API_KEY` ni `CONTACT_TO_EMAIL`
+el formulario muestra un aviso y apunta al email directo; con ellas, envía vía Resend.
 
 ## Checks y tests
 
