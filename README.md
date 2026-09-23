@@ -4,7 +4,7 @@ Portfolio personal de **Javi Med** — Backend & Full Stack Developer (Java, Spr
 
 <!-- TODO: añadir URL de producción cuando Vercel esté conectado -->
 
-Secciones del sitio: Home, About, Experience, Projects (con filtros y páginas por proyecto) y Contact (formulario funcional con server actions).
+Secciones del sitio: Home, About, Experience y Projects (con filtros y páginas por proyecto). El contacto es directo por email.
 
 ## Stack
 
@@ -47,12 +47,8 @@ Prerrequisitos: Node.js 22+ (recomendado 22 LTS, CI usa 22) y npm 10+.
 
 ```bash
 npm install
-cp .env.example .env   # solo necesario para probar el envío real del formulario
 npm run dev            # http://localhost:5173
 ```
-
-Variables de entorno (ver `.env.example`): sin `RESEND_API_KEY` ni `CONTACT_TO_EMAIL`
-el formulario muestra un aviso y apunta al email directo; con ellas, envía vía Resend.
 
 ## Checks y tests
 
@@ -69,10 +65,10 @@ npm run build         # build de producción
 
 ```
 src/
-  routes/            # páginas (+page.svelte) y endpoints (sitemap.xml, actions de contact)
+  routes/            # páginas (+page.svelte) y endpoints (sitemap.xml)
   lib/
     actions/         # action use:reveal (scroll reveal)
-    components/      # layout, home, projects, experience, contact, seo
+    components/      # layout, home, projects, experience, seo
     data/            # projects.ts, experience.ts, skills.ts, navigation.ts
     stores/          # theme (dark/light)
     types/           # Project, Experience, ...
@@ -84,8 +80,4 @@ tests/e2e/           # specs Playwright
 ## Deploy en Vercel
 
 1. Importa el repo en Vercel (framework preset: SvelteKit).
-2. Variables de entorno en el proyecto:
-   - `RESEND_API_KEY` (obligatoria para el formulario)
-   - `CONTACT_TO_EMAIL` (obligatoria para el formulario)
-   - `CONTACT_FROM_EMAIL` (opcional, por defecto `onboarding@resend.com`)
-3. Cada push a `main` despliega producción; cada PR genera un preview deployment.
+2. Cada push a `main` despliega producción; cada PR genera un preview deployment.

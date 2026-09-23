@@ -3,7 +3,7 @@ import { describe, expect, it } from 'vitest';
 import Navbar from '$lib/components/layout/Navbar.svelte';
 
 describe('Navbar', () => {
-	it('muestra logo y los 5 links con rutas correctas', () => {
+	it('muestra logo y los 4 links con rutas correctas', () => {
 		render(Navbar);
 		expect(screen.getByRole('link', { name: /javi med/i })).toHaveAttribute('href', '/');
 		for (const [label, href] of [
@@ -11,7 +11,6 @@ describe('Navbar', () => {
 			['About', '/about'],
 			['Projects', '/projects'],
 			['Experience', '/experience'],
-			['Contact', '/contact'],
 		] as const) {
 			expect(screen.getByRole('link', { name: label })).toHaveAttribute('href', href);
 		}

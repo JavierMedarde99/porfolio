@@ -24,7 +24,7 @@
 			Ver proyectos
 		</a>
 		<a
-			href="/contact"
+			href="mailto:javiermedmata@gmail.com"
 			class="min-h-11 rounded-md border border-zinc-300 px-5 py-2.5 text-center font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
 		>
 			Contactar

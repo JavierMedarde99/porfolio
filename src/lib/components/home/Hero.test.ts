@@ -10,7 +10,10 @@ describe('Hero', () => {
 			'href',
 			'/projects'
 		);
-		expect(screen.getByRole('link', { name: 'Contactar' })).toHaveAttribute('href', '/contact');
+		expect(screen.getByRole('link', { name: 'Contactar' })).toHaveAttribute(
+			'href',
+			'mailto:javiermedmata@gmail.com'
+		);
 	});
 
 	it('lista tecnologías destacadas', () => {

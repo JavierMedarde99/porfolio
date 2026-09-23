@@ -87,10 +87,10 @@
 				>Contacto</span
 			>
 			<a
-				href="/contact"
+				href="mailto:javiermedmata@gmail.com"
 				class="text-sm transition-colors hover:text-zinc-500 dark:hover:text-zinc-400"
 			>
-				Escríbeme desde la página de contacto
+				javiermedmata@gmail.com
 			</a>
 		</div>
 	</div>

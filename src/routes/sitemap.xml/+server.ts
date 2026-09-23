@@ -12,7 +12,6 @@ const STATIC_PAGES: Entry[] = [
 	{ path: '/about', changefreq: 'monthly', priority: '0.8' },
 	{ path: '/projects', changefreq: 'weekly', priority: '0.9' },
 	{ path: '/experience', changefreq: 'monthly', priority: '0.8' },
-	{ path: '/contact', changefreq: 'monthly', priority: '0.7' },
 ];
 
 export async function GET(): Promise<Response> {
