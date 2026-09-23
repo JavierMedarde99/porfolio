@@ -1,5 +1,6 @@
 import { fail } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
+import { buildSubject } from '$lib/server/email';
 import type { Actions } from './$types';
 
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -48,7 +49,7 @@ export const actions = {
 				from: CONTACT_FROM_EMAIL || 'onboarding@resend.com',
 				to: [CONTACT_TO_EMAIL],
 				reply_to: email,
-				subject: asunto ? `[Portfolio] ${asunto}` : `[Portfolio] Mensaje de ${nombre}`,
+				subject: buildSubject(asunto, nombre),
 				text: `Nombre: ${nombre}\nEmail: ${email}\n\n${mensaje}`,
 			}),
 		});
