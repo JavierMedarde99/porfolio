@@ -130,13 +130,12 @@ export const projects: Project[] = [
 		github: 'https://github.com/JavierMedarde99/porfolio',
 		category: 'Frontend',
 		descriptionLong:
-			'Portfolio personal construido con SvelteKit y Svelte 5 (runes), TypeScript estricto y Tailwind CSS 4. Incluye modo oscuro con persistencia, páginas de proyectos con filtros, formulario de contacto con server actions y pipeline de CI.',
+			'Portfolio personal construido con SvelteKit y Svelte 5 (runes), TypeScript estricto y Tailwind CSS 4. Incluye modo oscuro con persistencia, páginas de proyectos con filtros y pipeline de CI.',
 		architecture:
-			'SvelteKit con renderizado de servidor, datos centralizados en módulos TypeScript y componentes por dominio (layout, home, projects, experience, contact).',
+			'SvelteKit con renderizado de servidor, datos centralizados en módulos TypeScript y componentes por dominio (layout, home, projects, experience).',
 		decisions: [
 			'SvelteKit por su simplicidad y rendimiento frente a SPAs clásicas.',
 			'Datos (proyectos, experiencia) en TypeScript separados de la presentación.',
-			'Server actions para el contacto sin exponer credenciales en el cliente.',
 		],
 		problems: [
 			'Compatibilidad de versiones entre SvelteKit, Vite y el plugin de Svelte al fijar dependencias.',

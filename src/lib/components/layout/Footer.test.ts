@@ -18,9 +18,17 @@ describe('Footer', () => {
 		).toBeInTheDocument();
 	});
 
-	it('enlaza a las 5 secciones', () => {
+	it('muestra email directo de contacto', () => {
 		render(Footer);
-		for (const href of ['/', '/about', '/projects', '/experience', '/contact']) {
+		expect(screen.getByRole('link', { name: 'javiermedmata@gmail.com' })).toHaveAttribute(
+			'href',
+			'mailto:javiermedmata@gmail.com'
+		);
+	});
+
+	it('enlaza a las 4 secciones', () => {
+		render(Footer);
+		for (const href of ['/', '/about', '/projects', '/experience']) {
 			const links = screen
 				.getAllByRole('link')
 				.filter((link) => link.getAttribute('href') === href);

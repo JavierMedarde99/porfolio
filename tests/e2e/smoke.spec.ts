@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-const ROUTES = ['/', '/about', '/projects', '/projects/money-manager', '/experience', '/contact'];
+const ROUTES = ['/', '/about', '/projects', '/projects/money-manager', '/experience'];
 
 for (const route of ROUTES) {
 	test(`${route} carga sin errores de consola ni de página`, async ({ page }) => {
