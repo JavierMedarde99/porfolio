@@ -1,5 +1,8 @@
 import type { Project } from '$lib/types/project';
 
+// Nota: las demos son servicios externos (Render/Vercel) fuera de nuestro control:
+// pueden tardar en arrancar (cold start) o cambiar de URL. Si una demo cae, el
+// resto del portfolio sigue funcionando; solo hay que actualizar la URL aquí.
 export const projects: Project[] = [
 	{
 		slug: 'money-manager',
