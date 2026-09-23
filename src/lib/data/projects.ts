@@ -1,5 +1,8 @@
 import type { Project } from '$lib/types/project';
 
+// Nota: las demos son servicios externos (Render/Vercel) fuera de nuestro control:
+// pueden tardar en arrancar (cold start) o cambiar de URL. Si una demo cae, el
+// resto del portfolio sigue funcionando; solo hay que actualizar la URL aquí.
 export const projects: Project[] = [
 	{
 		slug: 'money-manager',
@@ -117,6 +120,8 @@ export const projects: Project[] = [
 		problems: ['Mantener la wiki sincronizada con los cambios de backend y frontend.'],
 	},
 	{
+		// Intencional: el propio portfolio se lista como proyecto porque demuestra
+		// el stack (SvelteKit, SEO, CI). No destacado para no canibalizar el resto.
 		slug: 'portfolio',
 		title: 'Portfolio',
 		description: 'Este portfolio: SvelteKit 5 + TypeScript + Tailwind CSS con dark mode, SEO y CI.',

@@ -82,3 +82,38 @@ describe('projects data', () => {
 		).toEqual(['collection-backend', 'money-manager']);
 	});
 });
+
+// Los datos son estáticos y locales (confiables, bajo control del repo).
+// Este contrato documenta esa decisión: si algún día vienen de una API/CMS,
+// aquí se añadiría validación runtime (p. ej. Zod) en vez de solo tipos.
+describe('projects contract', () => {
+	const CATEGORIES = ['Backend', 'Frontend', 'Mobile', 'Full Stack', 'Documentation'];
+
+	it('todo proyecto tiene campos obligatorios no vacíos', () => {
+		for (const project of projects) {
+			expect(project.slug.length).toBeGreaterThan(0);
+			expect(project.title.length).toBeGreaterThan(0);
+			expect(project.description.length).toBeGreaterThan(0);
+			expect(project.technologies.length).toBeGreaterThan(0);
+			expect(typeof project.featured).toBe('boolean');
+		}
+	});
+
+	it('categorías y URLs son válidas', () => {
+		for (const project of projects) {
+			if (project.category !== undefined) {
+				expect(CATEGORIES).toContain(project.category);
+			}
+			for (const url of [
+				project.github,
+				project.githubFrontend,
+				project.demo,
+				project.demoFrontend,
+			]) {
+				if (url !== undefined) {
+					expect(() => new URL(url)).not.toThrow();
+				}
+			}
+		}
+	});
+});
