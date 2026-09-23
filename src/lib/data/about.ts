@@ -17,7 +17,11 @@ export const GROUP_PROJECTS: Record<string, GroupProject> = {
 };
 
 export const WORK_METHOD: WorkStep[] = [
-	{ step: '01', title: 'Analizar', text: 'Entiendo el problema y los requisitos antes de escribir código.' },
+	{
+		step: '01',
+		title: 'Analizar',
+		text: 'Entiendo el problema y los requisitos antes de escribir código.',
+	},
 	{ step: '02', title: 'Diseñar', text: 'Defino la arquitectura y los contratos de la API.' },
 	{ step: '03', title: 'Implementar', text: 'Código limpio, tipado y commits pequeños.' },
 	{ step: '04', title: 'Testear', text: 'Verifico cada cambio antes de integrarlo.' },
