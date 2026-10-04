@@ -1,6 +1,6 @@
 # porfolio
 
-Portfolio personal de **Javi Med** — Backend & Full Stack Developer (Java, Spring Boot, microservicios y cloud, con frontends en Svelte/React y apps en Flutter).
+Portfolio personal de **Javier Medarde Mata** — Backend & Full Stack Developer (Java, Spring Boot, microservicios y cloud, con frontends en Svelte/React y apps en Flutter).
 
 <!-- TODO: añadir URL de producción cuando Vercel esté conectado -->
 

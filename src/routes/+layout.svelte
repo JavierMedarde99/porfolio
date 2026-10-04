@@ -35,12 +35,14 @@
 	<meta property="og:image:type" content="image/png" />
 </svelte:head>
 
-<div
-	class="flex min-h-screen flex-col bg-white text-zinc-900 transition-colors dark:bg-zinc-950 dark:text-zinc-100"
->
+<div class="flex min-h-screen flex-col bg-bg text-fg transition-colors">
 	<Navbar />
 	<div class="flex-1">
 		{@render children()}
 	</div>
 	<Footer />
+	<div
+		aria-hidden="true"
+		class="grain pointer-events-none fixed inset-0 z-[60] opacity-[0.05] mix-blend-multiply dark:opacity-[0.07] dark:mix-blend-screen"
+	></div>
 </div>

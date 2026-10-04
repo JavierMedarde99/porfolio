@@ -26,33 +26,37 @@
 </script>
 
 <header
-	class="sticky top-0 z-40 border-b border-zinc-200 bg-white/80 backdrop-blur transition-colors dark:border-zinc-800 dark:bg-zinc-950/80"
+	class="sticky top-0 z-40 border-b border-line-strong bg-bg/85 backdrop-blur-md transition-colors"
 >
 	<nav
 		aria-label="Navegación principal"
-		class="mx-auto flex h-16 max-w-5xl items-center justify-between px-4"
+		class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4"
 	>
-		<a href="/" class="flex items-center gap-2 text-lg font-bold tracking-tight">
+		<a href="/" class="group flex items-center gap-3" aria-label="Javier Medarde Mata — inicio">
 			<span
 				aria-hidden="true"
-				class="flex h-8 w-8 items-center justify-center rounded-md bg-zinc-900 text-sm text-white dark:bg-white dark:text-zinc-900"
+				class="flex h-9 w-9 items-center justify-center border border-line-strong bg-fg font-mono text-xs font-semibold text-bg shadow-brutal-sm transition-colors group-hover:bg-accent group-hover:text-accent-fg"
 			>
-				JM
+				JMM
 			</span>
-			<span>Javi Med</span>
+			<span class="font-display text-xl font-bold tracking-tight">Javier Medarde Mata</span>
+			<span class="hidden font-mono text-[11px] uppercase tracking-widest text-muted lg:inline"
+				>/portfolio</span
+			>
 		</a>
 
-		<ul class="hidden items-center gap-6 md:flex">
-			{#each NAV_LINKS as link (link.href)}
+		<ul class="hidden items-center gap-7 md:flex">
+			{#each NAV_LINKS as link, i (link.href)}
 				<li>
 					<a
 						href={link.href}
 						aria-current={$page.url.pathname === link.href ? 'page' : undefined}
-						class="text-sm transition-colors hover:text-zinc-500 dark:hover:text-zinc-400 {$page.url
-							.pathname === link.href
-							? 'font-semibold'
-							: ''}"
+						class="group flex items-baseline gap-1.5 font-mono text-[13px] uppercase tracking-wider transition-colors hover:text-accent {$page
+							.url.pathname === link.href
+							? 'text-accent'
+							: 'text-fg'}"
 					>
+						<span class="text-[10px] text-accent" aria-hidden="true">0{i + 1}</span>
 						{link.label}
 					</a>
 				</li>
@@ -63,7 +67,7 @@
 			<button
 				onclick={toggleTheme}
 				aria-label={$theme === 'dark' ? 'Cambiar a modo claro' : 'Cambiar a modo oscuro'}
-				class="flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800"
+				class="flex min-h-11 min-w-11 items-center justify-center border border-line-strong p-2 transition-colors hover:bg-fg hover:text-bg"
 			>
 				{#if $theme === 'dark'}
 					<svg
@@ -111,7 +115,7 @@
 				onclick={() => (menuOpen = true)}
 				aria-label="Abrir menú"
 				aria-expanded={menuOpen}
-				class="flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 transition-colors hover:bg-zinc-100 md:hidden dark:hover:bg-zinc-800"
+				class="flex min-h-11 min-w-11 items-center justify-center border border-line-strong p-2 transition-colors hover:bg-fg hover:text-bg md:hidden"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
