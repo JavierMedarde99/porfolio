@@ -4,50 +4,57 @@
 
 	interface Props {
 		project: Project;
+		index?: number;
 	}
 
-	let { project }: Props = $props();
+	let { project, index = 0 }: Props = $props();
+
+	const indexLabel = $derived(index > 0 ? String(index).padStart(2, '0') : '★');
 </script>
 
 <article
-	class="group flex flex-col overflow-hidden rounded-xl border border-zinc-200 bg-white transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus-within:ring-2 focus-within:ring-zinc-500 dark:border-zinc-800 dark:bg-zinc-950"
+	class="group flex flex-col border border-line-strong bg-surface shadow-brutal-sm transition-all duration-200 hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal focus-within:ring-2 focus-within:ring-accent"
 >
-	{#if project.image}
-		<img
-			src={project.image}
-			alt={`Captura de ${project.title}`}
-			loading="lazy"
-			class="h-44 w-full object-cover"
-		/>
-	{:else}
-		<div
-			aria-hidden="true"
-			class="flex h-44 w-full items-center justify-center bg-gradient-to-br from-zinc-200 to-zinc-300 dark:from-zinc-800 dark:to-zinc-900"
+	<div class="relative h-44 overflow-hidden border-b border-line-strong">
+		{#if project.image}
+			<img
+				src={project.image}
+				alt={`Captura de ${project.title}`}
+				loading="lazy"
+				class="h-full w-full object-cover grayscale-[35%] transition-all duration-300 group-hover:grayscale-0 group-hover:scale-[1.03]"
+			/>
+		{:else}
+			<div aria-hidden="true" class="bg-grid flex h-full w-full items-center justify-center">
+				<span class="font-mono text-6xl font-semibold text-accent">{indexLabel}</span>
+			</div>
+		{/if}
+		<span
+			class="absolute top-3 left-3 border border-line-strong bg-fg px-2 py-0.5 font-mono text-[11px] font-semibold text-bg"
 		>
-			<span class="text-5xl font-bold opacity-30">{project.title.charAt(0)}</span>
-		</div>
-	{/if}
+			{indexLabel}
+		</span>
+	</div>
 
 	<div class="flex flex-1 flex-col gap-3 p-5">
 		<div class="flex items-start justify-between gap-2">
-			<h2 class="text-lg font-bold">
+			<h2 class="font-display text-xl font-bold tracking-tight">
 				<a
 					href={`/projects/${project.slug}`}
-					class="transition-colors group-hover:underline focus:outline-none"
+					class="transition-colors group-hover:text-accent focus:outline-none"
 				>
 					{project.title}
 				</a>
 			</h2>
 			{#if project.category}
 				<span
-					class="shrink-0 rounded-md bg-zinc-100 px-2 py-1 text-xs font-medium dark:bg-zinc-800"
+					class="shrink-0 border border-line-strong px-2 py-0.5 font-mono text-[11px] uppercase tracking-wider"
 				>
 					{project.category}
 				</span>
 			{/if}
 		</div>
 
-		<p class="text-sm opacity-80">{project.description}</p>
+		<p class="text-sm text-muted">{project.description}</p>
 
 		<ul aria-label={`Tecnologías de ${project.title}`} class="flex flex-wrap gap-1.5">
 			{#each project.technologies as tech (tech)}
@@ -63,12 +70,12 @@
 				aria-label={project.githubFrontend
 					? `Código backend de ${project.title} en GitHub`
 					: `Código de ${project.title} en GitHub`}
-				class="flex items-center gap-1.5 rounded-md border border-zinc-300 px-3 py-1.5 text-sm font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
+				class="flex items-center gap-1.5 border border-line-strong px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-wide transition-colors hover:bg-fg hover:text-bg"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					width="16"
-					height="16"
+					width="14"
+					height="14"
 					viewBox="0 0 24 24"
 					fill="none"
 					stroke="currentColor"
@@ -90,7 +97,7 @@
 					target="_blank"
 					rel="noreferrer"
 					aria-label={`Código frontend de ${project.title} en GitHub`}
-					class="flex items-center gap-1.5 rounded-md border border-zinc-300 px-3 py-1.5 text-sm font-medium transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800"
+					class="flex items-center gap-1.5 border border-line-strong px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-wide transition-colors hover:bg-fg hover:text-bg"
 				>
 					Frontend
 				</a>
@@ -101,17 +108,17 @@
 					target="_blank"
 					rel="noreferrer"
 					aria-label={project.demoFrontend ? `API de ${project.title}` : `Demo de ${project.title}`}
-					class="flex items-center gap-1.5 rounded-md bg-zinc-900 px-3 py-1.5 text-sm font-medium text-white transition-opacity hover:opacity-90 dark:bg-white dark:text-zinc-900"
+					class="flex items-center gap-1.5 border border-line-strong bg-accent px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-wide text-accent-fg shadow-brutal-sm transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
 				>
 					{project.demoFrontend ? 'API' : 'Demo'}
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
-						width="14"
-						height="14"
+						width="12"
+						height="12"
 						viewBox="0 0 24 24"
 						fill="none"
 						stroke="currentColor"
-						stroke-width="2"
+						stroke-width="2.5"
 						stroke-linecap="round"
 						stroke-linejoin="round"
 						aria-hidden="true"
@@ -127,7 +134,7 @@
 					target="_blank"
 					rel="noreferrer"
 					aria-label={`App de ${project.title}`}
-					class="flex items-center gap-1.5 rounded-md border border-zinc-900 px-3 py-1.5 text-sm font-medium transition-colors hover:bg-zinc-100 dark:border-white dark:hover:bg-zinc-800"
+					class="flex items-center gap-1.5 border border-line-strong px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-wide transition-colors hover:bg-fg hover:text-bg"
 				>
 					App
 				</a>

@@ -2,7 +2,7 @@ import { expect, test } from '@playwright/test';
 
 test('home carga con identidad y CTAs', async ({ page }) => {
 	await page.goto('/');
-	await expect(page.getByRole('heading', { name: 'Javi Med', level: 1 })).toBeVisible();
+	await expect(page.getByRole('heading', { name: 'Javier Medarde Mata', level: 1 })).toBeVisible();
 	await expect(page.getByRole('link', { name: 'Ver proyectos' })).toBeVisible();
 	await expect(page.getByRole('link', { name: 'Contactar' })).toBeVisible();
 });

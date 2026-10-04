@@ -35,18 +35,19 @@
 	}
 </script>
 
-<div class="flex flex-col gap-4 rounded-xl border border-zinc-200 p-4 dark:border-zinc-800">
+<div class="border border-line-strong bg-surface p-5 shadow-brutal-sm md:p-6">
 	<fieldset>
-		<legend class="mb-2 text-sm font-semibold tracking-wide uppercase opacity-70">Categoría</legend>
+		<legend class="mb-3 font-mono text-xs uppercase tracking-widest text-muted">Categoría</legend>
 		<div class="flex flex-wrap gap-2" role="group" aria-label="Filtrar por categoría">
 			{#each CATEGORIES as item (item)}
 				<button
 					type="button"
 					onclick={() => (category = item)}
 					aria-pressed={category === item}
-					class="rounded-full px-3 py-1.5 text-sm font-medium transition-colors {category === item
-						? 'bg-zinc-900 text-white dark:bg-white dark:text-zinc-900'
-						: 'border border-zinc-300 hover:bg-zinc-100 dark:border-zinc-700 dark:hover:bg-zinc-800'}"
+					class="border border-line-strong px-3 py-1.5 font-mono text-sm transition-all {category ===
+					item
+						? 'bg-fg text-bg shadow-brutal-sm'
+						: 'hover:bg-surface hover:shadow-brutal-sm hover:-translate-y-0.5'}"
 				>
 					{item}
 				</button>
@@ -54,14 +55,12 @@
 		</div>
 	</fieldset>
 
-	<fieldset>
-		<legend class="mb-2 text-sm font-semibold tracking-wide uppercase opacity-70"
-			>Tecnologías</legend
-		>
+	<fieldset class="mt-5">
+		<legend class="mb-3 font-mono text-xs uppercase tracking-widest text-muted">Tecnologías</legend>
 		<div class="flex flex-wrap gap-2">
 			{#each availableTechnologies as tech (tech)}
 				<label
-					class="flex cursor-pointer items-center gap-1.5 rounded-full border px-3 py-1.5 text-sm transition-colors has-checked:bg-zinc-900 has-checked:text-white has-checked:dark:bg-white has-checked:dark:text-zinc-900 border-zinc-300 dark:border-zinc-700"
+					class="flex cursor-pointer items-center gap-1.5 border border-line-strong px-3 py-1.5 font-mono text-sm transition-all has-checked:bg-fg has-checked:text-bg has-checked:shadow-brutal-sm hover:-translate-y-0.5"
 				>
 					<input
 						type="checkbox"
@@ -79,7 +78,7 @@
 		<button
 			type="button"
 			onclick={clearFilters}
-			class="self-start text-sm underline opacity-70 transition-opacity hover:opacity-100"
+			class="mt-5 font-mono text-xs uppercase tracking-widest underline decoration-accent decoration-2 underline-offset-4 transition-colors hover:text-accent"
 		>
 			Limpiar filtros
 		</button>

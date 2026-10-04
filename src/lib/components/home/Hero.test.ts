@@ -5,7 +5,9 @@ import Hero from '$lib/components/home/Hero.svelte';
 describe('Hero', () => {
 	it('muestra identidad y CTAs con rutas correctas', () => {
 		render(Hero);
-		expect(screen.getByRole('heading', { name: 'Javi Med', level: 1 })).toBeInTheDocument();
+		expect(
+			screen.getByRole('heading', { name: 'Javier Medarde Mata', level: 1 })
+		).toBeInTheDocument();
 		expect(screen.getByRole('link', { name: 'Ver proyectos' })).toHaveAttribute(
 			'href',
 			'/projects'

@@ -5,7 +5,7 @@ import Navbar from '$lib/components/layout/Navbar.svelte';
 describe('Navbar', () => {
 	it('muestra logo y los 4 links con rutas correctas', () => {
 		render(Navbar);
-		expect(screen.getByRole('link', { name: /javi med/i })).toHaveAttribute('href', '/');
+		expect(screen.getByRole('link', { name: /javier medarde mata/i })).toHaveAttribute('href', '/');
 		for (const [label, href] of [
 			['Home', '/'],
 			['About', '/about'],

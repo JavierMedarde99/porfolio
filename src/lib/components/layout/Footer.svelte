@@ -4,18 +4,62 @@
 	const year = new Date().getFullYear();
 </script>
 
-<footer class="border-t border-zinc-200 transition-colors dark:border-zinc-800">
-	<div class="mx-auto grid max-w-5xl gap-8 px-4 py-10 md:grid-cols-3">
-		<div class="flex flex-col gap-3">
-			<span class="text-lg font-bold">Javi Med</span>
-			<p class="text-sm opacity-70">Backend &amp; Full Stack Developer.</p>
+<footer class="border-t border-line-strong">
+	<!-- Llamada a la acción -->
+	<section aria-label="Contacto" class="border-b border-line-strong bg-grid px-4 py-16 md:py-20">
+		<div class="mx-auto max-w-6xl">
+			<p class="font-mono text-sm uppercase tracking-widest text-accent">// contacto</p>
+			<h2 class="mt-3 font-display text-5xl font-bold tracking-tight md:text-7xl">
+				¿<em class="italic text-accent">Hablamos</em>?
+			</h2>
+			<p class="mt-4 max-w-xl text-lg text-muted">
+				Estoy abierto a proyectos backend, arquitecturas y equipos que necesiten alguien que escriba
+				APIs robustas y las haga llegar a producción.
+			</p>
+			<a
+				href="mailto:javiermedmata@gmail.com"
+				aria-label="Escríbeme: javiermedmata@gmail.com"
+				class="mt-8 inline-flex items-center gap-2 border border-line-strong bg-accent px-6 py-3 font-mono text-sm font-semibold uppercase tracking-wider text-accent-fg shadow-brutal-sm transition-all hover:translate-x-0.5 hover:translate-y-0.5 hover:shadow-none"
+			>
+				javiermedmata@gmail.com
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="16"
+					height="16"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					aria-hidden="true"
+				>
+					<path d="M7 7h10v10" />
+					<path d="M7 17 17 7" />
+				</svg>
+			</a>
+		</div>
+	</section>
+
+	<div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 md:grid-cols-3">
+		<div class="flex flex-col gap-4">
+			<span class="flex items-center gap-3">
+				<span
+					aria-hidden="true"
+					class="flex h-9 w-9 items-center justify-center border border-line-strong bg-fg font-mono text-xs font-semibold text-bg"
+				>
+					JMM
+				</span>
+				<span class="font-display text-xl font-bold">Javier Medarde Mata</span>
+			</span>
+			<p class="text-sm text-muted">Backend &amp; Full Stack Developer.</p>
 			<div class="flex gap-2">
 				<a
 					href="https://github.com/JavierMedarde99"
 					target="_blank"
 					rel="noreferrer"
-					aria-label="GitHub de Javi Med"
-					class="flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800"
+					aria-label="GitHub de Javier Medarde Mata"
+					class="flex min-h-11 min-w-11 items-center justify-center border border-line-strong p-2 transition-colors hover:bg-fg hover:text-bg"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -39,8 +83,8 @@
 					href="https://www.linkedin.com/in/javier-medarde-mata-991689181"
 					target="_blank"
 					rel="noreferrer"
-					aria-label="LinkedIn de Javi Med"
-					class="flex min-h-11 min-w-11 items-center justify-center rounded-md p-2 transition-colors hover:bg-zinc-100 dark:hover:bg-zinc-800"
+					aria-label="LinkedIn de Javier Medarde Mata"
+					class="flex min-h-11 min-w-11 items-center justify-center border border-line-strong p-2 transition-colors hover:bg-fg hover:text-bg"
 				>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
@@ -65,16 +109,17 @@
 		</div>
 
 		<nav aria-label="Enlaces rápidos">
-			<span class="mb-3 block text-sm font-semibold tracking-wide uppercase opacity-70"
-				>Secciones</span
+			<span class="mb-4 block font-mono text-xs uppercase tracking-widest text-muted"
+				>// Secciones</span
 			>
-			<ul class="flex flex-col gap-2 text-sm">
-				{#each NAV_LINKS as link (link.href)}
+			<ul class="flex flex-col gap-3 font-mono text-sm">
+				{#each NAV_LINKS as link, i (link.href)}
 					<li>
 						<a
 							href={link.href}
-							class="transition-colors hover:text-zinc-500 dark:hover:text-zinc-400"
+							class="group inline-flex items-baseline gap-2 transition-colors hover:text-accent"
 						>
+							<span class="text-[10px] text-accent" aria-hidden="true">0{i + 1}</span>
 							{link.label}
 						</a>
 					</li>
@@ -83,21 +128,30 @@
 		</nav>
 
 		<div>
-			<span class="mb-3 block text-sm font-semibold tracking-wide uppercase opacity-70"
-				>Contacto</span
+			<span class="mb-4 block font-mono text-xs uppercase tracking-widest text-muted"
+				>// Contacto</span
 			>
 			<a
 				href="mailto:javiermedmata@gmail.com"
-				class="text-sm transition-colors hover:text-zinc-500 dark:hover:text-zinc-400"
+				class="font-mono text-sm transition-colors hover:text-accent"
 			>
 				javiermedmata@gmail.com
 			</a>
+			<p class="mt-4 font-mono text-xs text-muted">Marbella, España · UTC+1</p>
 		</div>
 	</div>
 
-	<div class="border-t border-zinc-200 dark:border-zinc-800">
-		<p class="mx-auto max-w-5xl px-4 py-4 text-sm opacity-70">
-			© {year} Javi Med. Todos los derechos reservados.
+	<div class="overflow-hidden border-t border-line-strong">
+		<p
+			aria-hidden="true"
+			class="text-outline -mb-4 select-none text-center font-display text-[9vw] font-bold leading-[0.8] tracking-tight md:text-[8rem]"
+		>
+			JAVIER MEDARDE MATA
+		</p>
+		<p
+			class="relative border-t border-line-strong bg-bg px-4 py-3 text-center font-mono text-xs text-muted"
+		>
+			© {year} Javier Medarde Mata. Todos los derechos reservados.
 		</p>
 	</div>
 </footer>

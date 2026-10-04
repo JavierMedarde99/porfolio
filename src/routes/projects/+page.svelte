@@ -33,38 +33,42 @@
 	<title>{pageTitle('Proyectos')}</title>
 	<meta
 		name="description"
-		content="Proyectos de Javi Med: backend con Spring Boot, apps móviles con Flutter y frontend con SvelteKit."
+		content="Proyectos de Javier Medarde Mata: backend con Spring Boot, apps móviles con Flutter y frontend con SvelteKit."
 	/>
 	<link rel="canonical" href={SITE.url + '/projects'} />
 </svelte:head>
 <SocialMeta
-	title="Proyectos | Javi Med"
-	description="Proyectos de Javi Med: backend con Spring Boot, apps móviles con Flutter y frontend con SvelteKit."
+	title="Proyectos | Javier Medarde Mata"
+	description="Proyectos de Javier Medarde Mata: backend con Spring Boot, apps móviles con Flutter y frontend con SvelteKit."
 	path="/projects"
 />
 
-<main class="mx-auto max-w-5xl px-4 py-12">
-	<h1 class="text-3xl font-bold tracking-tight">Proyectos</h1>
-	<p class="mt-2 opacity-80">Filtra por categoría o tecnología.</p>
+<main class="mx-auto max-w-6xl px-4 py-16 md:py-20">
+	<p class="font-mono text-sm uppercase tracking-widest text-accent">// 03 — proyectos</p>
+	<h1 class="mt-2 font-display text-5xl font-bold tracking-tight md:text-6xl">Proyectos</h1>
+	<p class="mt-3 max-w-2xl text-lg text-muted">
+		Filtra por categoría o tecnología. Cada tarjeta enlaza al código y, cuando existe, a la demo
+		desplegada.
+	</p>
 
-	<div class="mt-8">
+	<div class="mt-10">
 		<ProjectFilter bind:category bind:technologies={selectedTechnologies} {availableTechnologies} />
 	</div>
 
 	{#if filtered.length === 0}
 		<p
 			role="status"
-			class="mt-10 rounded-xl border border-dashed border-zinc-300 p-8 text-center opacity-70 dark:border-zinc-700"
+			class="mt-10 border border-dashed border-line-strong p-10 text-center font-mono text-sm text-muted"
 		>
 			Ningún proyecto coincide con esos filtros. Prueba a limpiarlos.
 		</p>
 	{:else}
-		<p role="status" class="mt-6 text-sm opacity-60">
+		<p role="status" class="mt-8 font-mono text-sm text-muted">
 			{filtered.length} de {projects.length} proyectos
 		</p>
-		<div class="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-			{#each filtered as project (project.slug)}
-				<ProjectCard {project} />
+		<div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+			{#each filtered as project, i (project.slug)}
+				<ProjectCard {project} index={i + 1} />
 			{/each}
 		</div>
 	{/if}
