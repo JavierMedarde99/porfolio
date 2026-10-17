@@ -2,18 +2,11 @@ import { expect, test } from '@playwright/test';
 
 test('filtrar por Mobile muestra solo F1-Bet', async ({ page }) => {
 	await page.goto('/projects');
-	await expect(page.getByText('5 de 5 proyectos')).toBeVisible();
+	await expect(page.getByText('4 de 4 proyectos')).toBeVisible();
 	await page.getByRole('button', { name: 'Mobile', exact: true }).click();
-	await expect(page.getByText('1 de 5 proyectos')).toBeVisible();
+	await expect(page.getByText('1 de 4 proyectos')).toBeVisible();
 	await expect(page.getByRole('link', { name: 'F1-Bet', exact: true })).toBeVisible();
 	await expect(page.getByRole('link', { name: 'Money Manager', exact: true })).not.toBeVisible();
-});
-
-test('filtrar por Documentation muestra solo Wiki Collection', async ({ page }) => {
-	await page.goto('/projects');
-	await page.getByRole('button', { name: 'Documentation', exact: true }).click();
-	await expect(page.getByText('1 de 5 proyectos')).toBeVisible();
-	await expect(page.getByRole('link', { name: 'Wiki Collection', exact: true })).toBeVisible();
 });
 
 test('la tarjeta Full Stack muestra repos de backend y frontend', async ({ page }) => {

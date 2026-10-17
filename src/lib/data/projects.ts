@@ -87,37 +87,21 @@ export const projects: Project[] = [
 		demoFrontend: 'https://frontend-collection-eta.vercel.app',
 		category: 'Full Stack',
 		descriptionLong:
-			'Sistema completo para gestionar colecciones personales: libros, videojuegos, juegos de mesa, cartas Magic (incluye mazos Commander) y películas/series. Backend Spring Boot con arquitectura hexagonal sobre MongoDB y frontend React con listados, filtros, detalle y alta con APIs externas (Google Books, RAWG, Scryfall, TMDB).',
+			'Sistema completo para gestionar colecciones personales: libros, videojuegos, juegos de mesa, cartas Magic (incluye mazos Commander) y películas/series. Backend Spring Boot con arquitectura hexagonal sobre MongoDB y frontend React con listados, filtros, detalle y alta con APIs externas (Google Books, RAWG, Scryfall, TMDB). La documentación del sistema vive en su Wiki: arquitectura, APIs externas integradas y el estado de cada fase (libros, videojuegos, juegos de mesa, Magic, Commander, películas/series).',
 		architecture:
-			'Backend hexagonal: domain/ (modelos y puertos) ← application/ (servicios) ← infrastructure/ (adaptadores web, persistencia y clientes externos). Frontend React con React Router y llamadas relativas a /api. Cobertura backend con JaCoCo.',
+			'Backend hexagonal: domain/ (modelos y puertos) ← application/ (servicios) ← infrastructure/ (adaptadores web, persistencia y clientes externos). Frontend React con React Router y llamadas relativas a /api. Cobertura backend con JaCoCo. Wiki en Markdown organizada por módulos, con tabla de fases y enlaces a los repos de backend y frontend.',
 		decisions: [
 			'Arquitectura hexagonal para aislar el dominio de los adaptadores externos.',
 			'MongoDB por el modelo de datos flexible (cada tipo de colección tiene atributos distintos).',
 			'Frontend con URLs relativas /api para no acoplar entornos.',
+			'Wiki de GitHub para documentar por fases y módulos sin pasar por PRs.',
 		],
 		problems: [
 			'Modelar dominios heterogéneos (libros, mazos Commander, películas) en colecciones Mongo coherentes.',
 			'Integración con fuentes externas (Scryfall, BoardGameGeek, TMDB) con formatos dispares.',
+			'Mantener la Wiki sincronizada con los cambios de backend y frontend.',
 		],
-	},
-	{
-		slug: 'wiki-collection',
-		title: 'Wiki Collection',
-		description:
-			'Documentación central del sistema Collection: arquitectura, fases y guías de cada módulo.',
-		featured: false,
-		technologies: ['Markdown', 'GitHub Wiki'],
-		github: 'https://github.com/JavierMedarde99/wiki-collection',
-		category: 'Documentation',
-		descriptionLong:
-			'Repositorio de documentación del sistema Collection: describe la arquitectura (backend Spring Boot + MongoDB, frontend React), las APIs externas integradas y el estado de cada fase (libros, videojuegos, juegos de mesa, Magic, Commander, películas/series).',
-		architecture:
-			'Wiki en Markdown organizada por módulos, con tabla de fases y enlaces a los repos de backend y frontend.',
-		decisions: [
-			'Documentar por fases para que cada módulo sea navegable por separado.',
-			'GitHub Wiki para editar sin pasar por PRs.',
-		],
-		problems: ['Mantener la wiki sincronizada con los cambios de backend y frontend.'],
+		documentation: 'https://github.com/JavierMedarde99/wiki-collection',
 	},
 	{
 		// Intencional: el propio portfolio se lista como proyecto porque demuestra

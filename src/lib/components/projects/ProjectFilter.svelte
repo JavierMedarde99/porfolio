@@ -1,12 +1,5 @@
 <script module lang="ts">
-	export const CATEGORIES = [
-		'Todos',
-		'Backend',
-		'Frontend',
-		'Mobile',
-		'Full Stack',
-		'Documentation',
-	] as const;
+	export const CATEGORIES = ['Todos', 'Backend', 'Frontend', 'Mobile', 'Full Stack'] as const;
 	export type CategoryFilter = (typeof CATEGORIES)[number];
 </script>
 
