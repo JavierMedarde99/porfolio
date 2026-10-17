@@ -1,4 +1,4 @@
-export type ProjectCategory = 'Backend' | 'Frontend' | 'Mobile' | 'Full Stack' | 'Documentation';
+export type ProjectCategory = 'Backend' | 'Frontend' | 'Mobile' | 'Full Stack';
 
 export interface Project {
 	slug: string;
@@ -12,6 +12,7 @@ export interface Project {
 	demoFrontend?: string;
 	image?: string;
 	category?: ProjectCategory;
+	documentation?: string;
 	descriptionLong?: string;
 	architecture?: string;
 	decisions?: string[];

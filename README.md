@@ -19,13 +19,12 @@ Secciones del sitio: Home, About, Experience y Projects (con filtros y páginas 
 
 Fuente: `src/lib/data/projects.ts`.
 
-| Proyecto        | Categoría     | Stack                                                     |
-| --------------- | ------------- | --------------------------------------------------------- |
-| Money Manager   | Full Stack    | Spring Boot, PostgreSQL, JWT · React, TypeScript, Zustand |
-| F1-Bet          | Mobile        | Flutter, Dart, Supabase                                   |
-| Collection      | Full Stack    | Spring Boot hexagonal, MongoDB · React, TypeScript        |
-| Wiki Collection | Documentation | Markdown, GitHub Wiki                                     |
-| Portfolio       | Frontend      | SvelteKit, TypeScript, Tailwind CSS                       |
+| Proyecto      | Categoría  | Stack                                                                                                                            |
+| ------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------- |
+| Money Manager | Full Stack | Spring Boot, PostgreSQL, JWT · React, TypeScript, Zustand                                                                        |
+| F1-Bet        | Mobile     | Flutter, Dart, Supabase                                                                                                          |
+| Collection    | Full Stack | Spring Boot hexagonal, MongoDB · React, TypeScript · [Wiki de documentación](https://github.com/JavierMedarde99/wiki-collection) |
+| Portfolio     | Frontend   | SvelteKit, TypeScript, Tailwind CSS                                                                                              |
 
 ## Cursos y certificaciones
 

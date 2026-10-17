@@ -32,19 +32,13 @@ describe('projects data', () => {
 		);
 	});
 
-	it('collection-backend es Full Stack con ambos repos', () => {
+	it('collection-backend es Full Stack con ambos repos y wiki', () => {
 		const project = getProjectBySlug('collection-backend');
 		expect(project?.category).toBe('Full Stack');
 		expect(project?.githubFrontend).toBe('https://github.com/JavierMedarde99/frontend-collection');
 		expect(project?.demoFrontend).toBe('https://frontend-collection-eta.vercel.app');
 		expect(project?.demo).toBe('https://backend-collection.onrender.com/swagger-ui/index.html');
-	});
-
-	it('wiki-collection es Documentation sin demo', () => {
-		const project = getProjectBySlug('wiki-collection');
-		expect(project?.category).toBe('Documentation');
-		expect(project?.demo).toBeUndefined();
-		expect(project?.technologies).toEqual(expect.arrayContaining(['Markdown']));
+		expect(project?.documentation).toBe('https://github.com/JavierMedarde99/wiki-collection');
 	});
 
 	it('getFeaturedProjects solo devuelve destacados', () => {
@@ -63,15 +57,12 @@ describe('projects data', () => {
 		expect(filterByCategory('Todas')).toEqual([]);
 	});
 
-	it('filterByCategory agrupa Full Stack y Documentation', () => {
+	it('filterByCategory agrupa Full Stack', () => {
 		expect(
 			filterByCategory('Full Stack')
 				.map((project) => project.slug)
 				.sort()
 		).toEqual(['collection-backend', 'money-manager']);
-		expect(filterByCategory('Documentation').map((project) => project.slug)).toEqual([
-			'wiki-collection',
-		]);
 	});
 
 	it('filterByTechnology encuentra stack frontend', () => {
@@ -87,7 +78,7 @@ describe('projects data', () => {
 // Este contrato documenta esa decisión: si algún día vienen de una API/CMS,
 // aquí se añadiría validación runtime (p. ej. Zod) en vez de solo tipos.
 describe('projects contract', () => {
-	const CATEGORIES = ['Backend', 'Frontend', 'Mobile', 'Full Stack', 'Documentation'];
+	const CATEGORIES = ['Backend', 'Frontend', 'Mobile', 'Full Stack'];
 
 	it('todo proyecto tiene campos obligatorios no vacíos', () => {
 		for (const project of projects) {

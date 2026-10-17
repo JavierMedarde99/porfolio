@@ -139,6 +139,32 @@
 					App
 				</a>
 			{/if}
+			{#if project.documentation}
+				<a
+					href={project.documentation}
+					target="_blank"
+					rel="noreferrer"
+					aria-label={`Documentación de ${project.title}`}
+					class="flex items-center gap-1.5 border border-line-strong px-3 py-1.5 font-mono text-xs font-medium uppercase tracking-wide transition-colors hover:bg-fg hover:text-bg"
+				>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="14"
+						height="14"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						aria-hidden="true"
+					>
+						<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
+						<path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" />
+					</svg>
+					Wiki
+				</a>
+			{/if}
 		</div>
 	</div>
 </article>
