@@ -80,3 +80,4 @@ tests/e2e/           # specs Playwright
 
 1. Importa el repo en Vercel (framework preset: SvelteKit).
 2. Cada push a `main` despliega producción; cada PR genera un preview deployment.
+   
